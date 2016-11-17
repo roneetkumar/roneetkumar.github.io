@@ -1,0 +1,753 @@
+// -------------imports--------------------
+
+@import 'shadows','center-mixins','animation','colors'
+
+//--------values----------
+$gutter: 15px
+$circle-value: 300px
+//--------values----------
+
+//------------------font-mixins---------------
+@mixin div-wala-font
+    font-size: 36px
+    line-height: 1.1
+    color: rgba(0,0,0,0.4)
+    -webkit-font-smoothing: antialiased
+//------------------font-mixins-----------------
+
+*
+    margin: 0
+    padding: 0
+    font-family: 'Fira Sans', sans-serif
+    cursor: default
+
+body,html
+    background: #e0e0e0
+
+.wrapper,header#top,#bio,#logo-wrapper,#passions,#qualifications,#social,footer#bottom
+    overflow: hidden
+
+//-------------------------background-wallpaper-animation-styles-----------------------
+.background-wrapper
+    @include centered-x
+    position: absolute
+    width: 100%
+    height: 500px
+    overflow: hidden
+    .cir-1,.cir-2,.cir-3,.cir-4
+        @include centered
+        width: ($circle-value*4)
+        height: ($circle-value*4)
+        background: rgba(#000,0.05)
+        border-radius: 50%
+        // border-radius: 100% 50%
+    .cir-2
+        width: ($circle-value*3)
+        height: ($circle-value*3)
+        // animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
+    .cir-3
+        width: ($circle-value*2)
+        height: ($circle-value*2)
+        // animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
+    .cir-4
+        width: $circle-value
+        height: $circle-value
+        // animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
+    .play-ani
+        animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
+//-------------------------background-wallpaper-animation-styles-----------------------
+
+//----------------------------------gutter-text-styles-----------------------------
+h1.gutter-text
+    @include centered-x
+    font-size: 22px
+    color: rgba(#000,0.4)
+    padding: 5px 10px 15px 10px
+    text-align: center
+    font-weight: 300
+    letter-spacing: 2px
+    .load
+        position: absolute
+        right: -20px
+        top: 3px
+        margin-left: 70px
+        width: 20px
+        height: 20px
+        border: 3px solid rgba(#000,0.3)
+        border-radius: 50%
+        animation: gol-gol 1s ease-in-out infinite
+//----------------------------------gutter-text-styles-----------------------------
+
+//----------------------------------ripple-styles----------------------------------
+.ripple
+    @include centered
+    position: absolute
+    width: 0
+    height: 0
+    transition: all 0.3s ease
+    border-radius: 50%
+.logo:active .ripple
+    width: 100%
+    height: 100%
+    background-color: rgba(#000,0.1)
+//----------------------------------ripple-styles----------------------------------
+
+//-----------------------------------header----------------------------------------
+.header
+    position: absolute
+    width: 100%
+    height: 500px
+    margin-bottom: $gutter
+    box-shadow: $box-shadow-6dp
+    z-index: 1
+    transition: box-shadow 0.3s ease-in-out
+    background: $accents
+    .pro-pic
+        @include centered-x
+        position: absolute
+        bottom: 8px
+        width: 180px
+        height: 180px
+        border: 2px solid white
+        background: url('../assets/me1.png')
+            color: $accents
+            size: cover
+        border-radius: 50%
+        box-shadow: inherit
+        transition: all 300ms ease-in-out
+    .mini-pro
+        transform: translate(-50%,35px)
+        width: 70px
+        height: 70px
+    &::after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 5px
+        background: rgba(0,0,0,0.1)
+        bottom: 0
+        z-index: -1
+    .cir-1,.cir-2,.cir-3,.cir-4
+        animation: none
+
+.m-h-fixed
+    position: fixed
+    transform: translateY(-444px)
+    box-shadow: 0 8px 15px -2px rgba(0,0,0,0.4)
+// ------------------------------------my-bio----------------------------------------
+#bio
+    width: 100%
+    min-height: 500px
+    margin: 565px 0 $gutter 0
+    background: #fff
+    box-shadow: $box-shadow-6dp
+    color: rgba(#000,0.4)
+    h1,h2
+        text-align: center
+        padding-top: 30px
+        font-size: 32px
+        font-weight: 400
+        letter-spacing: 4px
+        &::after
+            @include centered-x
+            content: ""
+            display: block
+            width: 70px
+            height: 2px
+            background: rgba(#000,0.3)
+            top: 5px
+    h2
+        font-size: 16px
+        font-weight: 500
+        padding: 0
+        margin-top: 10px
+    p.about-me
+        @include centered-x
+        font-size: 24px
+        text-align: justify
+        width: 90%
+        max-width: 700px
+        padding: 20px
+        margin: 20px 0
+        @media only screen and(max-width: 425px)
+            font-size: 22px
+        @media only screen and(max-width: 320px)
+            font-size: 20px
+
+// ----------------------------------------logo--------------------------------------
+#logo-wrapper
+    width: 100%
+    height: 500px
+    background: $logo-wrapper
+    margin-bottom: $gutter
+    box-shadow: $box-shadow-6dp
+    position: relative
+    .logo
+        @include centered
+        width: 200px
+        height: 200px
+        border-radius: 50%
+        background: $logo-color
+        box-shadow: $box-shadow-6dp
+        cursor: default
+        svg
+            .brush
+                fill: $logo-brush
+            .stick
+                fill: $logo-stick
+            .code
+                fill: $logo-code
+    h1
+        @include centered-x
+        @include div-wala-font
+        position: absolute
+        text-align: center
+        width: 100%
+        top: 405px
+        margin-left: 160px
+        transition: all 500ms ease-in-out
+    h1.top
+        top: 60px
+        margin-left: -160px
+    h1,h1.top
+        @media only screen and(max-width: 768px)
+            margin: 0
+        @media only screen and(max-width: 425px)
+            font-size: 32px
+// ----------------------------------------my-passions-----------------------------------------
+#passions
+    width: 100%
+    height: 500px
+    margin-bottom: $gutter
+    box-shadow: $box-shadow-6dp
+    @media only screen and(max-width: 1024px)
+        height: auto
+    .design-wrapper,
+    .dev-wrapper,
+    .photo-wrapper
+        width: (100%/3)
+        height: 500px
+        float: left
+        overflow: hidden
+        position: relative
+        @media only screen and(max-width: 1024px)
+            width: 50%
+        @media only screen and(max-width: 768px)
+            width: 100%
+        h1
+            @include centered-x
+            @include div-wala-font
+            position: absolute
+            bottom: 70px
+            transition: all 500ms ease-in-out
+            @media only screen and(max-width: 425px)
+                font-size: 32px
+            span
+                @include centered-x
+                font-size: 24px
+                font-weight: normal
+                top: -5px
+    img
+        @include centered-x
+        width: 430px
+    .dev-wrapper
+        background: $dev-wrapper
+    .design-wrapper
+        background: $design-wrapper
+        img
+            top: 120px
+        h1
+            top: 80px
+    .photo-wrapper
+        background: $photo-wrapper
+        @media only screen and(max-width: 1024px)
+            float: none
+            width: 100%
+    button
+        @include centered-x
+        position: absolute
+        bottom: 22px
+        height: 36px
+        border: none
+        background: rgba(#fff, 0.25)
+        border-radius: 2px
+        padding: 0 20px
+        font-size: 18px
+        font-weight: 400
+        color: rgba(#000,0.4)
+        box-shadow: $box-shadow-4dp
+        transition: box-shadow 0.1s ease,color 0.1s ease-in-out
+        cursor: default
+        &:focus
+            outline: none
+        &:active
+            box-shadow: $box-shadow-2dp
+        &:hover
+            color: rgba(#000,0.5)
+            // box-shadow: $box-shadow-4dp
+    button[name=design]
+        bottom: 442px
+//---------------------------------------qualifications--------------------------------------
+#qualifications
+    position: relative
+    width: 100%
+    height: 500px
+    background: $qualifications-wrapper
+    margin-bottom: $gutter
+    box-shadow: $box-shadow-6dp
+    .q-content
+        @include centered
+        position: absolute
+        top: 42%
+        width: 300px
+        height: 300px
+        background: rgba(0,0,0,0)
+        border-radius: 2px
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.6)
+        overflow: hidden
+        svg
+            @include centered
+            fill: rgba(0,0,0,0.3)
+
+    .b-one,.b-two,.b-three,.b-four,.s-b-one,.s-b-two,.s-b-three,.s-b-four
+        display: inline-block
+        position: absolute
+        bottom: 4%
+        transform: translate(-50%,-50%)
+        width: 50px
+        height: 50px
+        background: #fff
+        box-shadow: $box-shadow-6dp
+        border-radius: 50%
+        margin: 0 10px
+        transition: all 0.3s ease-in-out
+        overflow: hidden
+        &:hover svg
+            transition: fill 0.1s ease-in-out
+            fill: rgba(0,0,0,0.5)
+        svg
+            @include centered
+            position: absolute
+            fill: rgba(0,0,0,0.3)
+            transition: all 0.3s ease-in-out
+        .edu
+            padding: 52px 18px
+            .title
+                font-size: 18px
+                color: rgba(0,0,0,0.6)
+                margin: 10px 0
+                letter-spacing: 3px
+            .content
+                .element
+                    margin: 6px 0
+                    .name
+                        color: #212121
+                        font-size: 16px
+                        font-family: 'Fira Mono'
+                        margin: 4px 0
+                    .course
+                        color: #424242
+                        font-size: 15px
+                        margin: 4px 0
+                    .info
+                        color: #616161
+                        font-size: 14px
+                        margin: 4px 0
+                .pro-ele
+                    margin: 0 0 25px 0
+                    .name
+                        margin: 12px 0
+                        color: rgba(0,0,0,0.5)
+                hr
+                    background-color: #9e9e9e
+                    height: 1px
+                    border: 0
+                    margin: 12px 0
+
+            .progress-wrapper
+                width: 100%
+                height: 4px
+                background: rgba(0,0,0,0.1)
+                border-radius: 4px
+                .progress-value
+                    width: 65%
+                    height: 4px
+                    background: rgba(0,0,0,0.2)
+                    border-radius: 4px
+                    .progress-dot
+                        @include centered
+                        transform: translate(-50%,-50%) rotate(-136deg)
+                        left: 100%
+                        width: 18px
+                        height: 18px
+                        border-radius: 50%
+                        background: #fff
+                        transition: all 0.15s ease-in-out
+                        &:active
+                            width: 25px
+                            height: 25px
+                            background: rgba(0,0,0,0.3)
+                            border-radius: 0 20px 20px
+                            transform: translate(-50%,-160%) rotate(-136deg)
+                    .reverse-dot
+                        transform: translate(-50%,-50%) rotate(44deg)
+                        &:active
+                            transform: translate(-50%, 60%) rotate(44deg)
+                        span
+                            transform: translate(-50%,-50%) rotate(-44deg)
+                            top: 45%
+                            left: 50%
+                    span
+                        @include centered
+                        top: 35%
+                        left: 45%
+                        font-size: 14px
+                        color: #fff
+                        transform: translate(-50%,-50%) rotate(136deg)
+                        pointer-events: none
+                        cursor: pointer
+                //--------------------------------progress-value-------------------------------
+                .web-d-value
+                    width: 75%
+                .a-d-value
+                    width: 65%
+                .illu-value
+                    width: 65%
+                .icono-value
+                    width: 80%
+                .ux-ui-value
+                    width: 70%
+                .photo-cap-value
+                    width: 75%
+                .p-edit-value
+                    width: 85%
+                .photo-mani-value
+                    width: 80%
+                //--------------------------------progress-value-------------------------------
+        .hide
+            display: none
+        .shift
+            top: 10%
+    .b-one,.s-b-one
+        left: 10%
+    .b-two
+        background: $dev-wrapper
+        left: 35%
+        svg
+            transform: translate(-50%,-50%) scale(1.2)
+
+    .s-b-two
+        left: 35%
+    .b-three,.s-b-three
+        background: $design-wrapper
+        left: 59%
+    .b-four,.s-b-four
+        background: $photo-wrapper
+        left: 84%
+    .s-reset
+        background: rgba(0,0,0,0)
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.5)
+    .b-open
+        width: 300px
+        height: 300px
+        position: absolute
+        display: inline-block
+        bottom: -2%
+        left: 50%
+        transform: translate(-50%,-50%)
+        border-radius: 2px
+        box-shadow: $box-shadow-4dp
+        margin: 0
+//----------------------------------------social-------------------------------------------
+#social
+    width: 100%
+    height: (250px/2)
+    background: #fff
+    margin-bottom: $gutter
+    box-shadow: $box-shadow-6dp
+    ul.list
+        @include centered
+        list-style: none
+        width: 100%
+    ul.list li
+        width: (100%/3)
+        height: (250px/2)
+        float: left
+        cursor: default
+        h1
+            @include centered
+            @include div-wala-font
+            transition: color 100ms ease-in-out,transform 150ms ease-in-out
+            @media only screen and(max-width: 700px)
+                display: none
+            @media only screen and(max-width: 425px)
+                font-size: 32px
+        &:hover h1
+            transform: translate(-50%,-50%) scale(0.7)
+        svg
+            @include centered
+            fill: rgba(#000,0.4)
+            width: 50px
+            display: none
+            @media only screen and(max-width: 700px)
+                display: block
+
+    .fb
+        background: $facebook
+    .gplus
+        background: $gplus
+    .twitter
+        background: $twitter
+//------------------------------------------------------footer----------------------------------
+footer#bottom
+    position: relative
+    width: 100%
+    height: (500px/2)
+    background: $accents
+    h1
+        @include centered-x
+        color: rgba(#000,0.4)
+        text-align: center
+        font-size: 16px
+        font-weight: 400
+        letter-spacing: 4px
+        line-height: 40px
+        top: 20px
+        padding: 0px 10px
+        &::after
+            content: ""
+            @include centered-x
+            width: 170px
+            height: 2px
+            background: rgba(#000,0.3)
+            position: absolute
+            bottom: -5px
+    h1.cm
+        cursor: default
+        transition: all 150ms ease-in-out
+        top: 30px
+        padding: 0px 10px
+        &:hover
+            color: rgba(#000,0.5)
+            font-weight: 500
+        &::after
+            content: none
+
+    &::before
+        content: ""
+        position: absolute
+        width: 100%
+        height: 5px
+        background: rgba(0,0,0,0.1)
+        top: 0
+    .cir-1,.cir-2,.cir-3,.cir-4
+        animation: none
+    a
+        &:focus
+            outline: none
+//----------------------------------------------fab-bar--------------------------------------
+#fab-bar
+    @include centered-x
+    width: 700px
+    height: 56px
+    background: #414141
+    position: fixed
+    bottom: 0
+    box-shadow: 0 -2px 20px rgba(#000, 0.5)
+    border-radius: 50% 50% 0% 0%
+    z-index: 1
+    .up-arrow,
+    .down-arrow
+        @include centered
+        width: 40px
+        height: 40px
+        position: absolute
+        border-radius: 50%
+        margin-left: -100px
+        transition: all 200ms ease-in-out
+        a
+            cursor: default
+            svg
+                @include centered
+                width: 24px
+                height: 24px
+                fill: #fff
+    .down-arrow
+        margin-left: 100px
+
+    .up-arrow:hover,
+    .down-arrow:hover
+        background-color: rgba(0,0,0,0.1)
+
+    .up-arrow:active,
+    .down-arrow:active
+        background-color: rgba(0,0,0,0.2)
+
+.fab-header-wrapper
+    overflow: hidden
+    height: 56px
+    position: relative
+
+.fab
+    @include centered-x
+    width: 56px
+    height: 56px
+    border-radius: 50%
+    background: $accents
+    z-index: 1
+    position: fixed
+    bottom: 10px
+    box-shadow: $box-shadow-4dp
+    transition: all 400ms ease-in-out
+    cursor: default
+    &:hover
+        box-shadow: $box-shadow-12dp
+    .fab-header
+        @include centered
+        background: $accents
+        width: 0
+        height: 0
+        border-radius: 50%
+        // opacity: 0
+        transition: all 200ms ease-in-out
+    .fab-header-badlo
+        background: $haribati
+
+    .btn-mail
+        @include centered
+        position: absolute
+        svg
+            width: 24px
+            height: 24px
+
+    .form-wrapper
+        padding: 24px 24px 24px
+        min-height: 250px
+        line-height: 1.25em
+        overflow: hidden
+        .text-input
+            width: 100%
+            margin-top: 8px
+            margin-bottom: 8px
+            padding: .3125em
+            border: none
+            border-radius: 0
+            border-bottom: 1px solid $accents
+            background-color: inherit
+            transition: border-color .3s
+            color: inherit
+            font-size: 1em
+            font-weight: 400
+            display: inline-block
+            vertical-align: top
+            outline: 0
+            box-sizing: border-box
+            &:not(:focus)
+                border-bottom-color: rgba(0,0,0,.12)
+        textarea
+            resize: none
+            word-wrap: break-word
+        .button-wrapper
+            position: relative
+            width: 100%
+            height: 85px
+            .button
+                @include centered
+                width: 52px
+                height: 52px
+                border-radius: 50%
+                transform: translate(-50%, -50%) scale(1)
+                transition: all 350ms ease-in-out
+                box-shadow: $box-shadow-4dp
+                background-color: $accents
+                cursor: default
+                border: none
+                outline: 0
+                -webkit-tap-highlight-color: transparent
+                .svg-wrapper
+                    width: 100%
+                    height: 100%
+                    border-radius: 50%
+                    transition: background 0.2s ease-in-out
+                    cursor: default
+                    svg.send, svg.done
+                        @include centered
+                        width: 22px
+                        height: 22px
+                        margin-left: 2px
+                        position: absolute
+                        fill: white
+                    svg.done
+                        width: 30px
+                        height: 30px
+                        margin-left: 0
+                &:active .svg-wrapper
+                    background: rgba(0,0,0,0.15)
+            .f-btn-off
+                animation: jaake-aa 0.7s ease-in-out 1
+                animation-fill-mode: forwards
+
+.fab-open
+    width: 350px
+    height: 400px
+    margin: 0
+    border-radius: 2px
+    z-index: 2
+    bottom: 50%
+    left: 50%
+    transform: translate(-50%,50%)
+    transition: all 350ms ease-in-out
+    background: #fff
+    cursor: default
+    &:hover
+        box-shadow: $box-shadow-4dp
+    @media only screen and (max-width: 425px)
+        width: 100%
+        height: 100%
+    .fab-header-open
+        width: 400px
+        height: 400px
+        transform: translate(-50%,-50%) scale(1)
+        transition: all 700ms ease-in-out
+        // transition-delay: 0.2s
+        // opacity: 1
+        position: absolute
+        @media only screen and (max-width: 425px)
+            width: 430px
+            height: 430px
+
+h1.fab-title
+    @include centered
+    position: absolute
+    color: white
+    font-weight: 300
+    font-size: 24px
+    cursor: default
+
+.icon-close
+    position: fixed
+    top: 8px
+    right: 8px
+    z-index: -1
+    float: right
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    transition: background 200ms ease-in-out
+    @media only screen and(max-width: 425px)
+        z-index: 2
+    &:hover
+        background: rgba(0,0,0,0.1)
+    &:active
+        background: rgba(0,0,0,0.2)
+    svg
+        @include centered
+        width: 24px
+        height: 24px
+
+.overlay
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0.4)
+    position: fixed
+    z-index: 2
