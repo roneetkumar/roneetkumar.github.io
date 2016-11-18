@@ -13,13 +13,19 @@ $circle-value: 300px
     line-height: 1.1
     color: rgba(0,0,0,0.4)
     -webkit-font-smoothing: antialiased
-//------------------font-mixins-----------------
+//------------------font-mixins-----------------------
 
 *
     margin: 0
     padding: 0
     font-family: 'Fira Sans', sans-serif
     cursor: default
+    -moz-user-select: none
+    -ms-user-select: none
+    -khtml-user-select: none
+    -webkit-user-select: none
+    -webkit-touch-callout: none
+    user-select: none
 
 body,html
     background: #e0e0e0
@@ -404,7 +410,6 @@ h1.gutter-text
                         font-size: 14px
                         color: #fff
                         transform: translate(-50%,-50%) rotate(136deg)
-                        pointer-events: none
                         cursor: pointer
                 //--------------------------------progress-value-------------------------------
                 .web-d-value
@@ -461,7 +466,7 @@ h1.gutter-text
 //----------------------------------------social-------------------------------------------
 #social
     width: 100%
-    height: (250px/2+80px)
+    height: 248px
     background: #fff
     margin-bottom: $gutter
     box-shadow: $box-shadow-6dp
@@ -471,28 +476,31 @@ h1.gutter-text
         width: 100%
     ul.list li
         width: (100%/3)
-        height: (250px/2+1)
+        height: (248px/2)
         float: left
         cursor: default
         h1
             @include centered
             @include div-wala-font
-            transition: color 100ms ease-in-out,transform 150ms ease-in-out
+            transition: color 100ms ease-in-out,letter-spacing 150ms ease-in-out
             @media only screen and(max-width: 700px)
                 display: none
             @media only screen and(max-width: 425px)
                 font-size: 32px
         &:hover h1
-            transform: translate(-50%,-50%) scale(0.7)
+            letter-spacing: 8px
         svg
             @include centered
             fill: rgba(#000,0.4)
-            width: 60px
+            width: 70px
             display: none
+            transition: fill 0.1s ease-in-out
+            &:hover
+                fill: rgba(0,0,0,0.5)
             @media only screen and(max-width: 700px)
                 display: inline-block
     ul.list li.github, ul.list li.codepen
-        height: 80px
+        height: 125px
         width: 50%
 
     .fb
