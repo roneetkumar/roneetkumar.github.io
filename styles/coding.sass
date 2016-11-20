@@ -73,6 +73,27 @@ body,html
     border-radius: 2px
     box-shadow: $box-shadow-4dp
     display: inline-block
+    &:hover .code
+        opacity: 1
+    .code
+        opacity: 0
+        transition: opacity 0.2s ease-in-out
+        svg
+            position: absolute
+            right: 5px
+            bottom: 5px
+            width: 24px
+            height: 24px
+            padding: 6px
+            border-radius: 50%
+            fill: rgba(0,0,0,0.3)
+            transition: all 0.2s ease-in-out
+            &:hover
+                background: rgba(0,0,0,0.2)
+            &:active
+                background: rgba(0,0,0,0.3)
+
+
     .animation-wrapper
         @include centered
         position: absolute
