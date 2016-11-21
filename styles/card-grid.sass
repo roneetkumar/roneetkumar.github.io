@@ -44,17 +44,17 @@ body.design
 body.photography
     background: $photo-wrapper
 
+.wrapper
+    overflow: hidden
+
 .header
     width: 100%
     height: 300px
-    overflow: hidden
     img
         @include centered-x
         width: 400px
     .p-top
         top: -70px
-.overflow-preset
-    overflow: visible
 
 .grid-wrapper
     overflow: hidden
@@ -76,23 +76,35 @@ body.photography
     border-radius: 2px
     box-shadow: $box-shadow-4dp
     display: inline-block
+    overflow: hidden
     // &:hover .open-logo
     //     opacity: 1
-    .open-logo
+
         // opacity: 0
-        img
+    .title-bar
+        width: 100%
+        height: 60px
+        position: absolute
+        bottom: 0
+        background: #E0E0E0
+        span
+            @include centered-y
+            color: rgba(0,0,0,0.4)
+            font-size: 20px
+            left: 24px
+        img.open-logo
+            @include centered-y
             position: absolute
-            right: 5px
-            bottom: 5px
+            right: 8px
             width: 24px
             height: 24px
-            padding: 12px
+            padding: 10px
             border-radius: 50%
             transition: all 0.2s ease-in-out
             &:hover
-                background: rgba(0,0,0,0.2)
+                background: rgba(0,0,0,0.1)
             &:active
-                background: rgba(0,0,0,0.3)
+                background: rgba(0,0,0,0.2)
 
 
     .animation-wrapper,.design-wrapper,.photography-wrapper
@@ -111,3 +123,8 @@ body.photography
             border-radius: 50%
             background: #303f9f
             box-shadow: $box-shadow-8dp
+
+        img.fb-photos
+            width: 100%
+            transform: scale(0.9)
+            border-radius: 2px
