@@ -1,6 +1,7 @@
 // -------------imports--------------------
 
-@import 'shadows','center-mixins','animation','colors'
+@import 'shadows','center-mixins','animation','colors','coding-sty-sheet','photo-sty-sheet'
+
 
 //--------values----------
 $gutter: 15px
@@ -51,7 +52,9 @@ body.photography
         @include centered-x
         width: 400px
     .p-top
-        top: -100px
+        top: -70px
+.overflow-preset
+    overflow: visible
 
 .grid-wrapper
     overflow: hidden
@@ -67,23 +70,23 @@ body.photography
 .mini-card
     position: relative
     width: 280px
-    height: 280px
+    height: 340px
     background: #fff
     margin: 10px
     border-radius: 2px
     box-shadow: $box-shadow-4dp
     display: inline-block
-    &:hover .open-logo
-        opacity: 1
+    // &:hover .open-logo
+    //     opacity: 1
     .open-logo
-        opacity: 0
+        // opacity: 0
         img
             position: absolute
             right: 5px
             bottom: 5px
             width: 24px
             height: 24px
-            padding: 6px
+            padding: 12px
             border-radius: 50%
             transition: all 0.2s ease-in-out
             &:hover
@@ -93,38 +96,18 @@ body.photography
 
 
     .animation-wrapper,.design-wrapper,.photography-wrapper
-        @include centered
+        @include centered-x
         position: absolute
         width: 100%
-        height: 100%
+        height: 280px
         overflow: hidden
-        .cir
+        top: 0
+
+        img.design-svg
             @include centered
-            position: absolute
-            width: 110px
-            height: 110px
-            background: rgba(255,193,7,0.5)
+            width: 230px
+        img.portfolio
+            width: 210px
             border-radius: 50%
-            animation: ripple 2s ease-in-out infinite
-        .cir-2
-            animation: ripple 1s ease-in-out infinite
-        .clocks
-            @include centered
-            width: 220px
-            height: 220px
-            background: #3F51B5
-            box-shadow: inset 0 0 26px rgba(0, 0, 0, 0.5)
-            float: left
-            border-radius: 50%
-            animation: tick-tock 2s ease-in-out infinite
-            &::after
-                position: absolute
-                content: ""
-                display: inline-block
-                width: 20px
-                height: 20px
-                background: #fff
-                border-radius: 50%
-                right: 0
-                transform: translateY(-50%)
-                top: 50%
+            background: #303f9f
+            box-shadow: $box-shadow-8dp
