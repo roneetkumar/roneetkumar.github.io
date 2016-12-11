@@ -1,12 +1,6 @@
 // -------------imports--------------------
 
-@import 'shadows','center-mixins','animation','colors','coding-sty-sheet','photo-sty-sheet'
-
-
-//--------values----------
-$gutter: 15px
-$circle-value: 300px
-//--------values----------
+@import 'shadows','center-mixins','colors','animation/main-animation-file'
 
 //------------------font-mixins---------------
 @mixin div-wala-font
@@ -15,21 +9,6 @@ $circle-value: 300px
     color: rgba(0,0,0,0.4)
     -webkit-font-smoothing: antialiased
 //------------------font-mixins-----------------------
-
-@keyframes ripple
-    0%,
-    100%
-        transform: translate(-50%, -50%) scale(1)
-    50%
-        transform: translate(-50%, -50%) scale(2)
-
-@keyframes tick-tock
-    0%,
-    100%
-        transform: translate(-50%, -50%) rotate(0deg)
-
-    50%
-        transform: translate(-50%, -50%) rotate(180deg)
 
 *
     margin: 0
@@ -113,7 +92,7 @@ body.photography
         height: 280px
         overflow: hidden
         top: 0
-
+        //-------------------------------design-mini-card-----------------------
         img.design-svg
             @include centered
             width: 230px
@@ -122,7 +101,7 @@ body.photography
             border-radius: 50%
             background: #303f9f
             box-shadow: $box-shadow-6dp
-
+        //-------------------------------photo-mini-card-styles----------------
         img.fb-photos
             width: 100%
             transform: scale(0.9)
