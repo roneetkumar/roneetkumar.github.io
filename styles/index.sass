@@ -23,7 +23,7 @@ $circle-value: 300px
 body,html
     background: #e0e0e0
 
-.wrapper,header#top,#bio,#logo-wrapper,#passions,#qualifications,#social,footer#bottom
+.wrapper,header#top,#bio,#logo-wrapper,#passions,section#youtube,#qualifications,#social,footer#bottom
     overflow: hidden
 
 //-------------------------background-wallpaper-animation-styles-----------------------
@@ -286,6 +286,42 @@ h1.gutter-text
             // box-shadow: $box-shadow-4dp
     button[name=design]
         bottom: 442px
+
+//---------------------------------------youtube---------------------------------------------
+section#youtube
+    position: relative
+    width: 100%
+    height: 500px
+    background: $youtube
+    margin-bottom: $gutter
+    box-shadow: $box-shadow-6dp
+    h1.youtube-heading
+        @include centered-x
+        @include div-wala-font
+        position: absolute
+        top: 28px
+        transition: all 500ms ease-in-out
+        @media only screen and(max-width: 425px)
+            font-size: 32px
+    .video-wrapper
+        @include centered
+        width: 80%
+        max-width: 500px
+        box-shadow: $box-shadow-8dp
+        border-radius: 2px
+        overflow: hidden
+        border: 4px solid #fff
+        background: #fff
+        .video-container
+            position: relative
+            height: 0
+            padding-bottom: 56.25%
+            iframe, object, embed
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
 
 //---------------------------------------qualifications--------------------------------------
 #qualifications
