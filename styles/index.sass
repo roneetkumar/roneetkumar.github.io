@@ -299,13 +299,13 @@ section#youtube
         @include centered-x
         @include div-wala-font
         position: absolute
-        top: 28px
+        top: 35px
         transition: all 500ms ease-in-out
         @media only screen and(max-width: 425px)
             font-size: 32px
     .video-wrapper
         @include centered
-        width: 80%
+        width: 90%
         max-width: 500px
         box-shadow: $box-shadow-8dp
         border-radius: 2px
@@ -322,6 +322,27 @@ section#youtube
                 left: 0
                 width: 100%
                 height: 100%
+    button
+        @include centered-x
+        position: absolute
+        bottom: 35px
+        height: 36px
+        border: none
+        background: rgba(#fff, 0.25)
+        border-radius: 2px
+        padding: 0 20px
+        font-size: 18px
+        font-weight: 400
+        color: rgba(#000,0.4)
+        box-shadow: $box-shadow-4dp
+        transition: box-shadow 0.1s ease,color 0.1s ease-in-out
+        cursor: default
+        &:focus
+            outline: none
+        &:active
+            box-shadow: $box-shadow-2dp
+        &:hover
+            color: rgba(#000,0.5)
 
 //---------------------------------------qualifications--------------------------------------
 #qualifications
@@ -572,7 +593,7 @@ footer#bottom
             background: rgba(#000,0.3)
             position: absolute
             bottom: -5px
-    h1.cm
+    h1.footer-link
         cursor: default
         transition: all 150ms ease-in-out
         top: 30px
