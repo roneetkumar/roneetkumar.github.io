@@ -77,6 +77,9 @@ $(function() {
             $('svg.send').css('display', 'none');
             $('svg.done').css('display', 'block');
         }, 400);
+        setTimeout(function() {
+            fabClose();
+        }, 1200);
     });
 
     //animation trigger

@@ -381,14 +381,14 @@
                 </svg>
             </div>
             <div class="form-wrapper">
-                <form action="#" id="form">
-                    <input class="text-input" placeholder="Name">
-                    <input class="text-input" placeholder="Email">
-                    <textarea class="text-input" placeholder="Message" style="height: 49px; overflow-y: hidden;"></textarea>
-                    <input class="text-input" placeholder="How did you hear about Me?">
+                <form action="https://formspree.io/roneetparida@gmail.com" id="form" method="post">
+                    <input class="text-input" placeholder="Name" name="sender">
+                    <input class="text-input" placeholder="Email" name="senderEmail">
+                    <textarea class="text-input" placeholder="Message" name="message" style="height: 49px; overflow-y: hidden;"></textarea>
+                    <input class="text-input" placeholder="How did you hear about Me?" name="saying">
                 </form>
                 <div class="button-wrapper">
-                    <button class="button">
+                    <button type="submit" class="button" form="form">
                         <div class="svg-wrapper">
                             <svg class="send" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
                                 <path d="M4.02 42L46 24 4.02 6 4 20l30 4-30 4z" />
