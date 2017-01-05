@@ -48,6 +48,10 @@ $(function() {
         fabClose();
     });
 
+    $(".fab-header-wrapper").children().on('click',function(event){
+        event.stopPropagation();
+    });
+
     // qualification btn animation
 
     $('.b-one, .b-two, .b-three, .b-four').on('click',function () {
