@@ -2,7 +2,6 @@
 @import 'shadows','center-mixins','colors','index-animation'
 
 //--------values----------
-$gutter: 15px
 $circle-value: 300px
 //--------values----------
 
@@ -10,7 +9,7 @@ $circle-value: 300px
 @mixin div-wala-font
     font-size: 36px
     line-height: 1.1
-    color: rgba(0,0,0,0.4)
+    color: rgba(0,0,0,0.32)
     -webkit-font-smoothing: antialiased
 //------------------font-mixins-----------------------
 
@@ -23,19 +22,22 @@ $circle-value: 300px
         background: rgba(0, 0, 0, 0.20)
 
 body,html
-    background: #e0e0e0
+    background: #424242
 
-.wrapper,header#top,#bio,#logo-wrapper,#passions,section#youtube,#qualifications,#social,footer#bottom
+.wrapper
     overflow: hidden
     max-width: 1400px
     margin: 0 auto
+    padding: 0 10px
+    @media only screen and(max-width: 1400px)
+        padding: 0
 
 //-------------------------background-wallpaper-animation-styles-----------------------
 .background-wrapper
     @include centered-x
     position: absolute
     width: 100%
-    height: 350px
+    height: 450px
     overflow: hidden
     .cir-1,.cir-2,.cir-3,.cir-4
         @include centered
@@ -43,19 +45,15 @@ body,html
         height: ($circle-value*4)
         background: rgba(#000,0.05)
         border-radius: 50%
-        // border-radius: 100% 50%
     .cir-2
         width: ($circle-value*3)
         height: ($circle-value*3)
-        // animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
     .cir-3
         width: ($circle-value*2)
         height: ($circle-value*2)
-        // animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
     .cir-4
         width: $circle-value
         height: $circle-value
-        // animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
     .play-ani
         animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
 //-------------------------background-wallpaper-animation-styles-----------------------
@@ -64,19 +62,20 @@ body,html
 h1.gutter-text
     @include centered-x
     font-size: 22px
-    color: rgba(#000,0.4)
-    padding: 5px 10px 15px 10px
+    color: #757575
+    padding: 15px 10px
     text-align: center
     font-weight: 300
     letter-spacing: 2px
     .load
         position: absolute
         right: -20px
-        top: 3px
+        top: 0
         margin-left: 70px
+        margin-top: 14px
         width: 20px
         height: 20px
-        border: 3px solid rgba(#000,0.3)
+        // border: 3px solid #757575
         border-radius: 50%
         animation: gol-gol 1s ease-in-out infinite
 //----------------------------------gutter-text-styles-----------------------------
@@ -94,25 +93,27 @@ h1.gutter-text
     height: 100%
     background-color: rgba(#000,0.1)
 //----------------------------------ripple-styles----------------------------------
+header,section#bio,section#logo-wrapper,section#passions,section#youtube,section#qualifications,section#social,footer
+    overflow: hidden
+    border-radius: 2px
+    box-shadow: $box-shadow-4dp
+    @media only screen and(max-width: 1400px)
+        border-radius: 0
 
 //-----------------------------------header----------------------------------------
-.header
+header
     position: relative
     width: 100%
-    height: 350px
+    height: 500px
     left: 0
-    margin-bottom: 50px
-    box-shadow: $box-shadow-6dp
     z-index: 1
     transition: box-shadow 0.3s ease-in-out
-    background: $accents
-    overflow: hidden
+    background: $header
     .pro-pic
-        @include centered
-        bottom: 8px
         width: 180px
         height: 180px
-        border: 2px solid white
+        border: 3px solid white
+        margin: 157px auto 0
         background: url('../assets/me1.svg')
             color: #fff
             size: 90%
@@ -120,53 +121,31 @@ h1.gutter-text
         border-radius: 50%
         box-shadow: inherit
         transition: all 300ms ease-in-out
-    .mini-pro
-        transform: translate(-50%,35px)
+    h1.name,h1.desc
+        text-align: center
+        margin-top: 38px
+        font-size: 24px
+        font-weight: normal
+        letter-spacing: 4px
+        color: rgba(0,0,0,.4)
+    hr
         width: 70px
-        height: 70px
-    &::after
-        content: ""
-        position: absolute
-        width: 100%
-        height: 5px
-        background: rgba(0,0,0,0.1)
-        bottom: 0
-        left: 0
-        z-index: -1
+        height: 2px
+        background: rgba(#000,0.3)
+        margin: 7px auto
+        border: 0
+    h1.desc
+        font-size: 18px
+        margin: initial
     .cir-1,.cir-2,.cir-3,.cir-4
         animation: none
 
-// .m-h-fixed
-//     position: fixed
-//     transform: translateY(-444px)
-//     box-shadow: 0 8px 15px -2px rgba(0,0,0,0.4)
 // ------------------------------------my-bio----------------------------------------
 #bio
     width: 100%
-    min-height: 500px
-    margin-bottom: $gutter
+    min-height: 250px
     background: #fff
-    box-shadow: $box-shadow-6dp
     color: rgba(#000,0.4)
-    h1,h2
-        text-align: center
-        padding-top: 30px
-        font-size: 32px
-        font-weight: 400
-        letter-spacing: 4px
-        &::after
-            @include centered-x
-            content: ""
-            display: block
-            width: 70px
-            height: 2px
-            background: rgba(#000,0.3)
-            top: 5px
-    h2
-        font-size: 16px
-        font-weight: 500
-        padding: 0
-        margin-top: 10px
     p.about-me
         @include centered-x
         font-size: 24px
@@ -185,26 +164,13 @@ h1.gutter-text
     width: 100%
     height: 500px
     background: $logo-wrapper
-    margin-bottom: $gutter
-    box-shadow: $box-shadow-6dp
     position: relative
     .background-wrapper
         height: 500px
-    .logo
+    svg
         @include centered
-        width: 200px
-        height: 200px
-        border-radius: 50%
-        background: $logo-color
-        box-shadow: $box-shadow-6dp
-        cursor: default
-        svg
-            .brush
-                fill: $logo-brush
-            .stick
-                fill: $logo-stick
-            .code
-                fill: $logo-code
+        width: 130px
+
     h1
         @include centered-x
         @include div-wala-font
@@ -226,8 +192,6 @@ h1.gutter-text
 #passions
     width: 100%
     height: 500px
-    margin-bottom: $gutter
-    box-shadow: $box-shadow-6dp
     @media only screen and(max-width: 1024px)
         height: auto
     .design-wrapper,
@@ -302,8 +266,6 @@ section#youtube
     width: 100%
     height: 500px
     background: $youtube
-    margin-bottom: $gutter
-    box-shadow: $box-shadow-6dp
     h1.youtube-heading
         @include centered-x
         @include div-wala-font
@@ -316,7 +278,7 @@ section#youtube
         @include centered
         width: 90%
         max-width: 500px
-        box-shadow: $box-shadow-8dp
+        box-shadow: $box-shadow-4dp
         border-radius: 2px
         overflow: hidden
         border: 4px solid #fff
@@ -359,8 +321,6 @@ section#youtube
     width: 100%
     height: 500px
     background: $qualifications-wrapper
-    margin-bottom: $gutter
-    box-shadow: $box-shadow-6dp
     .q-content
         @include centered
         position: absolute
@@ -378,10 +338,10 @@ section#youtube
     .b-one,.b-two,.b-three,.b-four,.s-b-one,.s-b-two,.s-b-three,.s-b-four
         display: inline-block
         position: absolute
-        bottom: 4%
+        bottom: 5%
         transform: translate(-50%,-50%)
-        width: 50px
-        height: 50px
+        width: 40px
+        height: 40px
         background: #fff
         box-shadow: $box-shadow-4dp
         border-radius: 50%
@@ -396,6 +356,7 @@ section#youtube
             position: absolute
             fill: rgba(0,0,0,0.3)
             transition: all 0.3s ease-in-out
+            width: 24px
         .edu
             padding: 52px 18px
             .title
@@ -533,8 +494,6 @@ section#youtube
     width: 100%
     height: 248px
     background: #fff
-    margin-bottom: $gutter
-    box-shadow: $box-shadow-6dp
     ul.list
         @include centered
         list-style: none
@@ -556,14 +515,16 @@ section#youtube
             letter-spacing: 8px
         svg
             @include centered
-            fill: rgba(#000,0.4)
+            fill: rgba(#000,0.32)
             width: 70px
             display: none
             transition: fill 0.1s ease-in-out
-            &:hover
-                fill: rgba(0,0,0,0.5)
+
             @media only screen and(max-width: 700px)
                 display: inline-block
+        &:hover svg
+            fill: rgba(0,0,0,0.4)
+
     ul.list li.github, ul.list li.codepen
         height: 125px
         width: 50%
@@ -579,109 +540,56 @@ section#youtube
     .codepen
         background: $codepen
 //------------------------------------------------------footer----------------------------------
-footer#bottom
+footer
     position: relative
     width: 100%
     height: (500px/2)
-    background: $accents
+    background: #03a9f4
+    text-align: center
     h1
-        @include centered-x
         color: rgba(#000,0.4)
-        text-align: center
         font-size: 16px
         font-weight: 400
         letter-spacing: 4px
-        line-height: 40px
-        top: 20px
         padding: 0px 10px
-        &::after
-            content: ""
-            @include centered-x
-            width: 170px
-            height: 2px
-            background: rgba(#000,0.3)
-            position: absolute
-            bottom: -5px
+        margin-top: 40px
+    hr
+        width: 170px
+        height: 2px
+        background: rgba(#000,0.3)
+        border: 0
+        margin: 10px auto
     h1.footer-link
         cursor: default
         transition: all 150ms ease-in-out
-        top: 30px
-        padding: 0px 10px
+        margin: initial
         &:hover
             color: rgba(#000,0.5)
-            font-weight: 500
-        &::after
-            content: none
 
-    &::before
-        content: ""
-        position: absolute
-        width: 100%
-        height: 5px
-        background: rgba(0,0,0,0.1)
-        top: 0
-    .cir-1,.cir-2,.cir-3,.cir-4
-        animation: none
     a
         &:focus
             outline: none
-//----------------------------------------------fab-bar--------------------------------------
-#fab-bar
-    @include centered-x
-    width: 700px
-    height: 56px
-    background: #414141
-    position: fixed
-    bottom: 0
-    box-shadow: 0 -2px 20px rgba(#000, 0.5)
-    border-radius: 50% 50% 0% 0%
-    z-index: 1
-    .up-arrow,
-    .down-arrow
-        @include centered
-        width: 40px
-        height: 40px
-        position: absolute
-        border-radius: 50%
-        margin-left: -100px
-        transition: all 200ms ease-in-out
-        a
-            cursor: default
-            svg
-                @include centered
-                width: 24px
-                height: 24px
-                fill: #fff
-    .down-arrow
-        margin-left: 100px
-
-    .up-arrow:hover,
-    .down-arrow:hover
-        background-color: rgba(0,0,0,0.1)
-
-    .up-arrow:active,
-    .down-arrow:active
-        background-color: rgba(0,0,0,0.2)
 
 .fab-header-wrapper
     overflow: hidden
     height: 56px
     position: relative
+    border-radius: 2px 2px 0 0
 
 .fab
-    @include centered-x
+    right: 24px
+    bottom: 24px
     width: 56px
     height: 56px
     border-radius: 50%
     background: $accents
     z-index: 1
     position: fixed
-    bottom: 10px
-    box-shadow: $box-shadow-4dp
-    transition: all 400ms ease-in-out
-    cursor: default
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 3px 3px rgba(0,0,0,0.24), 0 0 6px rgba(0,0,0,0.12), 0 6px 6px rgba(0,0,0,0.24)
+    transition: all 400ms ease-in-out, box-shadow 224ms ease-in-out
+    cursor: pointer
     &:hover
-        box-shadow: $box-shadow-12dp
+        box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 6px 6px rgba(0,0,0,0.24), 0 0 12px rgba(0,0,0,0.12), 0 12px 12px rgba(0,0,0,0.24)
     .fab-header
         @include centered
         background: $accents
@@ -774,8 +682,8 @@ footer#bottom
     border-radius: 2px
     z-index: 2
     bottom: 50%
-    left: 50%
-    transform: translate(-50%,50%)
+    right: 50%
+    transform: translate(50%,50%)
     transition: all 350ms ease-in-out
     background: #fff
     cursor: default

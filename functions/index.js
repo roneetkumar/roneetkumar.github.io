@@ -53,7 +53,6 @@ $(function() {
     });
 
     // qualification btn animation
-
     $('.b-one, .b-two, .b-three, .b-four').on('click',function () {
         $(this).addClass('b-open');
         $('.b-one, .b-two, .b-three, .b-four').not(this).removeClass('b-open');
@@ -85,42 +84,6 @@ $(function() {
             fabClose();
         }, 1200);
     });
-
-    //animation trigger
-    $('.logo').on('click', function() {
-        $('.cir-1,.cir-2,.cir-3,.cir-4').addClass('play-ani');
-    });
-
-    //animation class removed after animation
-    $('.cir-1,.cir-2,.cir-3,.cir-4').on(
-        "webkitAnimationEnd oanimationend msAnimationEnd animationend",
-        function() {
-            $(this).removeClass('play-ani');
-        }
-    );
-
-    // //mini header fixed
-    // $(window).scroll(function() {
-    //     if ($(window).scrollTop() > 444) {
-    //         $('.header').addClass('m-h-fixed');
-    //         $('.mini-pro').css('box-shadow', '0 8px 15px -2px rgba(0,0,0,0.4)')
-    //             // $('.pro-pic').addClass('mini-pro');
-    //     } else {
-    //         $('.header').removeClass('m-h-fixed');
-    //         $('.mini-pro').css('box-shadow', 'inherit')
-    //             // $('.header').css('background-image', 'initial');
-    //             // $('.pro-pic').removeClass('mini-pro');
-    //     }
-    // });
-    //
-    // //profile pic fixed and animation
-    // $(window).scroll(function() {
-    //     if ($(window).scrollTop() > 300) {
-    //         $('.pro-pic').addClass('mini-pro');
-    //     } else {
-    //         $('.pro-pic').removeClass('mini-pro');
-    //     }
-    // });
 
     //anchor for scrolling
     $('a[href*="#"]:not([href="#"])').click(function() {
