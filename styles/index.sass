@@ -1,5 +1,14 @@
 // -------------imports--------------------
-@import 'shadows','center-mixins','colors','index-animation'
+@import 'shadows','center-mixins','colors'
+
+@keyframes gol-gol
+    0%, 100%
+        transform: rotateY(0deg)
+        border: 3px solid #757575
+
+    50%
+        transform: rotateY(180deg)
+        border: 3px solid #9E9E9E
 
 //--------values----------
 $circle-value: 300px
@@ -33,6 +42,8 @@ body,html
     padding: 0 10px
     @media only screen and(max-width: 1400px)
         padding: 0
+    .overlay
+        display: none
 
 //-------------------------background-wallpaper-animation-styles-----------------------
 .background-wrapper
@@ -56,8 +67,6 @@ body,html
     .cir-4
         width: $circle-value
         height: $circle-value
-    .play-ani
-        animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
 //-------------------------background-wallpaper-animation-styles-----------------------
 
 //----------------------------------gutter-text-styles-----------------------------
@@ -138,8 +147,6 @@ header
     h1.desc
         font-size: 18px
         margin: initial
-    .cir-1,.cir-2,.cir-3,.cir-4
-        animation: none
 
 // ------------------------------------my-bio----------------------------------------
 #bio
@@ -401,41 +408,12 @@ section#youtube
                     border-radius: 4px
                     .progress-dot
                         @include centered
-                        transform: translate(-50%,-50%) rotate(-136deg)
+                        transform: translate(-50%,-50%)
                         left: 100%
                         width: 18px
                         height: 18px
                         border-radius: 50%
                         background: #fff
-                        transition: all 0.15s ease-in-out
-                        -moz-user-select: none
-                        -ms-user-select: none
-                        -khtml-user-select: none
-                        -webkit-user-select: none
-                        -webkit-touch-callout: none
-                        user-select: none
-                        &:active
-                            width: 25px
-                            height: 25px
-                            background: rgba(0,0,0,0.3)
-                            border-radius: 0 20px 20px
-                            transform: translate(-50%,-160%) rotate(-136deg)
-                    .reverse-dot
-                        transform: translate(-50%,-50%) rotate(44deg)
-                        &:active
-                            transform: translate(-50%, 60%) rotate(44deg)
-                        span
-                            transform: translate(-50%,-50%) rotate(-44deg)
-                            top: 45%
-                            left: 50%
-                    span
-                        @include centered
-                        top: 35%
-                        left: 45%
-                        font-size: 14px
-                        color: #fff
-                        transform: translate(-50%,-50%) rotate(136deg)
-                        cursor: pointer
                 //--------------------------------progress-value-------------------------------
                 .web-d-value
                     width: 75%
@@ -606,6 +584,7 @@ footer
         height: 24px
 
     .form-wrapper
+        display: none
         padding: 24px 24px 24px
         min-height: 250px
         line-height: 1.25em
@@ -654,22 +633,13 @@ footer
                     border-radius: 50%
                     transition: background 0.2s ease-in-out
                     cursor: default
-                    svg.send, svg.done
+                    svg.send
                         @include centered
                         width: 22px
                         height: 22px
                         margin-left: 2px
                         position: absolute
                         fill: white
-                    svg.done
-                        width: 30px
-                        height: 30px
-                        margin-left: 0
-                &:active .svg-wrapper
-                    background: rgba(0,0,0,0.15)
-            .f-btn-off
-                animation: jaake-aa 0.7s ease-in-out 1
-                animation-fill-mode: forwards
 
 .fab-open
     width: 350px
@@ -683,6 +653,7 @@ footer
     transition: all 350ms ease-in-out
     background: #fff
     cursor: default
+    box-shadow: $box-shadow-4dp
     &:hover
         box-shadow: $box-shadow-4dp
     @media only screen and (max-width: 425px)
@@ -693,8 +664,6 @@ footer
         height: 400px
         transform: translate(-50%,-50%) scale(1)
         transition: all 700ms ease-in-out
-        // transition-delay: 0.2s
-        // opacity: 1
         position: absolute
         @media only screen and (max-width: 425px)
             width: 430px
@@ -706,8 +675,10 @@ h1.fab-title
     color: white
     font-size: 24px
     cursor: default
+    display: none
 
 .icon-close
+    display: none
     position: fixed
     top: 8px
     right: 8px

@@ -1,7 +1,4 @@
 $(function() {
-    //hide elements on start
-    $('.overlay, h1.fab-title, .icon-close, .form-wrapper, svg.done').hide();
-
     //fab open function
     function fabOpen() {
         $('.btn-mail').fadeOut(350)
@@ -27,15 +24,6 @@ $(function() {
         $('body, html').css({
             'overflow': 'visible'
         });
-        $('svg.send').css({
-            'display': 'block'
-        });
-        $('svg.done').css({
-            'display': 'none'
-        });
-        setTimeout(function() {
-            $('.fab-header').removeClass('fab-header-badlo');
-        }, 400);
     }
 
     //fab open
@@ -53,36 +41,23 @@ $(function() {
     });
 
     // qualification btn animation
-    $('.b-one, .b-two, .b-three, .b-four').on('click',function () {
+    var FourButtons = $('.b-one, .b-two, .b-three, .b-four');
+    
+    FourButtons.on('click',function () {
         $(this).addClass('b-open');
-        $('.b-one, .b-two, .b-three, .b-four').not(this).removeClass('b-open');
+        FourButtons.not(this).removeClass('b-open');
 
         $(this).children().addClass('shift');
-        $('.b-one, .b-two, .b-three, .b-four').not(this).children().removeClass('shift');
+        FourButtons.not(this).children().removeClass('shift');
 
         $(this).children('.edu').removeClass('hide');
-        $('.b-one, .b-two, .b-three, .b-four').not(this).children('.edu').addClass('hide');
-
+        FourButtons.not(this).children('.edu').addClass('hide');
     });
 
     $('.s-b-one,.s-b-two,.s-b-three,.s-b-four').on('click',function () {
-        $('.b-one, .b-two, .b-three, .b-four').not(this).removeClass('b-open');
-        $('.b-one, .b-two, .b-three, .b-four').not(this).children().removeClass('shift');
-        $('.b-one, .b-two, .b-three, .b-four').not(this).children('.edu').addClass('hide');
-    });
-
-    // contact button ani
-    $('.button').on('click', function() {
-        $('.button').addClass('f-btn-off');
-        $('.fab-header').addClass('fab-header-badlo');
-        // $("#form")[0].reset();
-        setTimeout(function() {
-            $('svg.send').css('display', 'none');
-            $('svg.done').css('display', 'block');
-        }, 400);
-        setTimeout(function() {
-            fabClose();
-        }, 1200);
+        FourButtons.not(this).removeClass('b-open');
+        FourButtons.not(this).children().removeClass('shift');
+        FourButtons.not(this).children('.edu').addClass('hide');
     });
 
     //anchor for scrolling

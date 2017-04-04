@@ -1,6 +1,5 @@
 // -------------imports--------------------
-
-@import 'shadows','center-mixins','colors','animation/main-animation-file'
+@import 'shadows','center-mixins','colors'
 
 //------------------font-mixins---------------
 @mixin div-wala-font
@@ -9,7 +8,6 @@
     color: rgba(0,0,0,0.4)
     -webkit-font-smoothing: antialiased
 //------------------font-mixins-----------------------
-
 *
     margin: 0
     padding: 0
@@ -40,66 +38,68 @@ body.photography
     width: 100%
     margin: 30px auto
     text-align: center
-
-.mini-card
-    position: relative
-    width: 250px
-    height: 300px
-    background: #fff
-    margin: 10px
-    border-radius: 2px
-    box-shadow: $box-shadow-4dp
-    display: inline-block
-    overflow: hidden
-    text-align: initial
-    // &:hover .open-logo
-    //     opacity: 1
-
-        // opacity: 0
-    .title-bar
-        width: 100%
-        height: 50px
-        position: absolute
-        bottom: 0
-        background: #E0E0E0
-        span
-            @include centered-y
-            color: rgba(0,0,0,0.4)
-            font-size: 20px
-            left: 24px
-        img.open-logo
-            @include centered-y
-            position: absolute
-            display: none
-            right: 8px
-            width: 24px
-            height: 24px
-            padding: 10px
-            border-radius: 50%
-            transition: all 0.2s ease-in-out
-            &:hover
-                background: rgba(0,0,0,0.1)
-            &:active
-                background: rgba(0,0,0,0.2)
-
-    .animation-wrapper,.design-wrapper,.photography-wrapper
-        @include centered-x
-        position: absolute
-        width: 100%
-        height: 250px
+    .mini-card
+        position: relative
+        width: 250px
+        height: 300px
+        background: #fff
+        margin: 10px
+        border-radius: 2px
+        box-shadow: $box-shadow-4dp
+        display: inline-block
         overflow: hidden
-        top: 0
-        //-------------------------------design-mini-card-----------------------
-        img.design-svg
-            @include centered
-            width: 220px
-        img.portfolio
-            width: 200px
-            border-radius: 50%
-            background: #303f9f
-            box-shadow: $box-shadow-6dp
-        //-------------------------------photo-mini-card-styles----------------
-        img.fb-photos
+        text-align: initial
+        .title-bar
             width: 100%
-            transform: scale(0.9)
-            border-radius: 2px
+            height: 50px
+            position: absolute
+            bottom: 0
+            background: #E0E0E0
+            span
+                @include centered-y
+                color: rgba(0,0,0,0.4)
+                font-size: 20px
+                left: 24px
+            img.open-logo
+                @include centered-y
+                position: absolute
+                // display: none
+                right: 8px
+                width: 24px
+                height: 24px
+                padding: 8px
+                border-radius: 50%
+                transition: all 0.2s ease-in-out
+                cursor: pointer
+                &:hover
+                    background: rgba(0,0,0,0.1)
+                &:active
+                    background: rgba(0,0,0,0.2)
+
+            .disabled-open-logo
+                &:hover
+                    background: none !important
+                    cursor: default
+                &:active
+                    background: none !important
+                    cursor: default
+
+        .project-wrapper,.design-wrapper,.photography-wrapper
+            @include centered-x
+            position: absolute
+            width: 100%
+            height: 250px
+            overflow: hidden
+            top: 0
+            //-------------------------------design-mini-card-styles---------------
+            .thumbnail
+                @include centered
+                width: 200px
+                height: 200px
+                img
+                    width: 100%
+            //-------------------------------photo-mini-card-styles----------------
+            img.fb-photos
+                width: 100%
+                transform: scale(0.9)
+                border-radius: 2px

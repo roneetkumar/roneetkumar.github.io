@@ -1,14 +1,1 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="580px" height="580px" viewBox="0 0 580 580" enable-background="new 0 0 580 580" xml:space="preserve">
-<path fill="#8BC34A" d="M249.08,347.719c-19.654,11.606-26.198,37.006-14.589,56.664c9.187,15.556,0.309,31.85-9.725,37.775
-	c19.477,8.031,43.655,6.252,61.526-4.301c26.244-15.497,34.947-49.307,19.45-75.55C294.135,342.65,268.734,336.112,249.08,347.719z"
-	/>
-<path fill="#1E88E5" d="M346.124,140.337l-25.214-6.493c-7.367-1.893-14.91,2.563-16.805,9.923L260.559,312.91l51.941,13.375l43.546-169.143
-	C357.968,149.681,353.551,142.201,346.124,140.337z"/>
-<g>
-	<path fill="rgba(0,0,0,0.25)" d="M90.698,289.314l108.545,38.276v53.32l-163.96-69.507v-44.941l163.96-69.507v53.32L90.698,289.314z"/>
-</g>
-<g>
-	<path fill="rgba(0,0,0,0.25)" d="M489.986,288.743l-110.64-38.657v-52.939l165.864,69.507v44.751l-165.864,69.697v-53.13L489.986,288.743z"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="140 113 604 604"><defs><style>.a{fill:#2c397f;}.b{fill:#8bc34a;}.c{fill:#1e88e5;}.d{opacity:0.2;}.e{filter:url(#a);}</style><filter id="a" x="140" y="113" width="604" height="604" filterUnits="userSpaceOnUse"><feOffset dy="6" input="SourceAlpha"/><feGaussianBlur stdDeviation="5" result="b"/><feFlood flood-opacity="0.302"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="e" transform="matrix(1, 0, 0, 1, 0, 0)"><circle class="a" cx="287" cy="287" r="287" transform="translate(155 122)"/></g><g transform="translate(151.717 118.591)"><path class="b" d="M249.08,347.719a41.4,41.4,0,0,0-14.589,56.664c9.187,15.556.309,31.85-9.725,37.775,19.477,8.031,43.655,6.252,61.526-4.3a55.149,55.149,0,0,0,19.45-75.55A41.4,41.4,0,0,0,249.08,347.719Z"/><path class="c" d="M346.124,140.337l-25.214-6.493a13.826,13.826,0,0,0-16.8,9.923L260.559,312.91,312.5,326.285l43.546-169.143A13.694,13.694,0,0,0,346.124,140.337Z"/><g class="d"><path d="M90.7,289.314,199.243,327.59v53.32L35.283,311.4V266.462l163.96-69.507v53.32Z"/></g><g class="d"><path d="M489.986,288.743l-110.64-38.657V197.147L545.21,266.654v44.751L379.346,381.1v-53.13Z"/></g></g></svg>
