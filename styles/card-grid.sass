@@ -1,6 +1,10 @@
 // -------------imports--------------------
 @import 'shadows','center-mixins','colors'
 
+
+$chips-scroll-width-code: 464px
+$chips-scroll-width-design: 484px
+$chips-scroll-width-photo: 490px
 //------------------font-mixins---------------
 @mixin div-wala-font
     font-size: 36px
@@ -16,10 +20,41 @@
 
 body.coding
     background: $dev-wrapper
+    #chips-wrapper
+        .chips-list
+            width: $chips-scroll-width-code
+            .chips
+                background: #F44336
+            .chip-clicked
+                background: #fff
+                h1
+                    color: #F44336
 body.design
     background: $design-wrapper
+    #chips-wrapper
+        margin-top: 40px
+        .chips-list
+            width: $chips-scroll-width-design
+            .chips
+                background: #FFB300
+            .chip-clicked
+                background: #fff
+                h1
+                    color: #FFB300
+
 body.photography
     background: $photo-wrapper
+    .header
+        margin-bottom: 6px
+    #chips-wrapper
+        .chips-list
+            width: $chips-scroll-width-photo
+            .chips
+                background: #3F51B5
+            .chip-clicked
+                background: #fff
+                h1
+                    color: #3F51B5
 
 .wrapper
     overflow: hidden
@@ -30,15 +65,42 @@ body.photography
     img
         @include centered-x
         width: 400px
+        z-index: -1
     .p-top
         top: -70px
+
+//chips-wrapper-------------------------------------------------------------
+#chips-wrapper
+    text-align: center
+    margin-bottom: -30px
+    overflow-x: scroll
+    &::-webkit-scrollbar
+        display: none
+    .chips-list
+        margin: 0 auto
+        .chips
+            margin: 15px 6px
+            display: inline-block
+            border-radius: 50px
+            box-shadow: $box-shadow-2dp
+            transition: box-shadow 225ms ease-in-out
+            cursor: pointer
+            h1
+                text-align: center
+                font-size: 14px
+                color: #fff
+                padding: 7.5px 12px
+                padding-bottom: 6px
+                text-transform: uppercase
+                cursor: inherit
+
 
 .grid-wrapper
     overflow: hidden
     width: 100%
     margin: 30px auto
     text-align: center
-    .mini-card
+    .card
         position: relative
         width: 250px
         height: 300px
@@ -103,3 +165,6 @@ body.photography
                 width: 100%
                 transform: scale(0.9)
                 border-radius: 2px
+
+    .card-hidden
+        display: none
