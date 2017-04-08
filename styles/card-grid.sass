@@ -5,6 +5,7 @@
 $chips-scroll-width-code: 464px
 $chips-scroll-width-design: 484px
 $chips-scroll-width-photo: 490px
+
 //------------------font-mixins---------------
 @mixin div-wala-font
     font-size: 36px
@@ -18,6 +19,9 @@ $chips-scroll-width-photo: 490px
     font-family: 'Fira Sans', sans-serif
     cursor: default
     user-select: none
+
+.dont-scroll
+    overflow: hidden
 
 body.coding
     background: $dev-wrapper
@@ -93,8 +97,6 @@ body.photography
                 padding: 7.5px 12px
                 padding-bottom: 7px
                 text-transform: uppercase
-                cursor: inherit
-
 
 .grid-wrapper
     overflow: hidden
@@ -106,7 +108,7 @@ body.photography
         width: 250px
         height: 300px
         background: #fff
-        margin: 10px
+        margin: 8px
         border-radius: 2px
         box-shadow: $box-shadow-4dp
         display: inline-block
@@ -160,6 +162,7 @@ body.photography
                 width: 200px
                 height: 200px
                 img
+                    @include centered
                     width: 100%
             //-------------------------------photo-mini-card-styles----------------
             img.fb-photos
@@ -167,5 +170,38 @@ body.photography
                 transform: scale(0.9)
                 border-radius: 2px
 
+
+        .wrapper-show
+            height: calc(100% - 50px)
+            position: relative
+            img
+                transform: scale(1.5)
+
+
+
     .card-hidden
         display: none
+
+    .card-clicked
+        width: 100%
+        height: 100%
+        position: fixed
+        z-index: 1
+        display: block
+        top: 0
+        margin: 0
+        .title-bar
+            position: relative
+            text-align: center
+            box-shadow: $box-shadow-4dp
+            background: #607D8B
+            span
+                left: initial
+            img
+                box-shadow: inset 0 0 10px rgba(0,0,0,0.52)
+        .project-wrapper,.design-wrapper,.photography-wrapper
+            height: calc(100% - 50px)
+            position: relative
+            img
+                width: 100vw !important
+                max-width: 70vh

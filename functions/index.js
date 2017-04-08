@@ -92,6 +92,17 @@ $(function() {
         card.not('.select-elements, .select-mobile').addClass('card-hidden');
     });
 
+    $('.open-logo').on('click',function () {
+        $(this).closest('.card').toggleClass('card-clicked');
+        $('body,html').toggleClass('dont-scroll');
+        if($(this).attr("src") === "assets/open.svg"){
+            $(this).attr("src", "assets/close.svg");
+        }
+        else{
+            $(this).attr("src", "assets/open.svg");
+        }
+    });
+
 
     //anchor for scrolling
     $('a[href*="#"]:not([href="#"])').click(function() {
