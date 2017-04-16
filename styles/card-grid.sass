@@ -190,13 +190,6 @@ body.photography
                 border-radius: 2px
 
 
-        .wrapper-show
-            height: calc(100% - 50px)
-            position: relative
-            img
-                transform: scale(1.5)
-
-
     .card-hidden
         display: none
 
@@ -213,12 +206,18 @@ body.photography
         .title-bar
             position: relative
             text-align: center
-            box-shadow: $box-shadow-4dp
-            background: #607D8B
+            background: #424242
+            z-index: 1
             span
                 left: initial
+                color: white
             img
-                box-shadow: inset 0 0 10px rgba(0,0,0,0.52)
+                &:hover
+                    background: rgba(#fff,0.1) !important
+                &:active
+                    background: rgba(#fff,0.2) !important
+
+
         .project-wrapper,.design-wrapper,.photography-wrapper
             height: calc(100% - 50px)
             position: relative
