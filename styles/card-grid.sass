@@ -14,14 +14,14 @@ $chips-scroll-width-photo: 490px
     -webkit-font-smoothing: antialiased
 //------------------font-mixins-----------------------
 *
-    margin: 0
-    padding: 0
-    font-family: 'Fira Sans', sans-serif
-    cursor: default
-    user-select: none
+    // margin: 0
+    // padding: 0
+    // font-family: 'Fira Sans', sans-serif
+    // cursor: default
+    // user-select: none
 
-.dont-scroll
-    overflow: hidden
+// .dont-scroll
+//     overflow: hidden
 
 body.coding
     background: $dev-wrapper
@@ -117,6 +117,7 @@ body.photography
                 padding: 7.5px 12px
                 padding-bottom: 7px
                 text-transform: uppercase
+                font-weight: bold
 
 .grid-wrapper
     overflow: hidden
@@ -192,35 +193,3 @@ body.photography
 
     .card-hidden
         display: none
-
-    .card-clicked
-        width: 100%
-        height: 100%
-        position: fixed
-        z-index: 1
-        display: block
-        top: 0
-        left: 0
-        margin: 0
-        border-radius: 0
-        .title-bar
-            position: relative
-            text-align: center
-            background: #424242
-            z-index: 1
-            span
-                left: initial
-                color: white
-            img
-                &:hover
-                    background: rgba(#fff,0.1) !important
-                &:active
-                    background: rgba(#fff,0.2) !important
-
-
-        .project-wrapper,.design-wrapper,.photography-wrapper
-            height: calc(100% - 50px)
-            position: relative
-            img
-                height: 100vw !important
-                max-height: 70vh

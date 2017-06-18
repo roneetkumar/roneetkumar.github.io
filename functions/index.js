@@ -92,15 +92,10 @@ $(function() {
         card.not('.select-elements, .select-mobile').addClass('card-hidden');
     });
 
+
     $('.open-logo').on('click',function () {
-        $(this).closest('.card').toggleClass('card-clicked');
-        $('body,html').toggleClass('dont-scroll');
-        if($(this).attr("src") === "assets/open.svg"){
-            $(this).attr("src", "assets/close.svg");
-        }
-        else{
-            $(this).attr("src", "assets/open.svg");
-        }
+        var path = $(this).closest('.card').find('.thumbnail img').attr('src');
+        $('.open-logo').parent().attr('href',path);
     });
 
 
