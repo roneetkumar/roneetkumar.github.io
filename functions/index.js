@@ -92,9 +92,9 @@ $(function() {
         card.not('.select-elements, .select-mobile').addClass('card-hidden');
     });
 
-
+    //opening files
     $('.open-logo').on('click',function () {
-        var path = $(this).closest('.card').find('.thumbnail img').attr('src');
+        var path = $(this).closest('.card').find('.img').attr('src');
         $('.open-logo').parent().attr('href',path);
     });
 
