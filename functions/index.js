@@ -75,7 +75,7 @@ $(function() {
         $('.chips').not('.all-chips').removeClass('chip-clicked');
     });
 
-    $('.all-chips, .icons-chips, .illus-chips, .uiux-chips, .elements-chips, .websites-chips, .apps-chips, .web-apps-chips, .land-chips, .macro-chips, .port-chips, .mobile-chips').on('click',function () {
+    $('.all-chips, .icons-chips, .illus-chips, .uiux-chips, .elements-chips, .websites-chips, .apps-chips, .web-apps-chips, .land-chips, .macro-chips, .port-chips, .wild-chips').on('click',function () {
         card.removeClass('card-hidden');
     });
 
@@ -88,8 +88,8 @@ $(function() {
     $('.uiux-chips, .web-apps-chips , .port-chips').on('click',function () {
         card.not('.select-uiux, .select-web-apps, .select-port').addClass('card-hidden');
     });
-    $('.elements-chips, .mobile-chips').on('click',function () {
-        card.not('.select-elements, .select-mobile').addClass('card-hidden');
+    $('.elements-chips, .wild-chips').on('click',function () {
+        card.not('.select-elements, .select-wild').addClass('card-hidden');
     });
 
     //opening files
