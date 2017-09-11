@@ -140,7 +140,7 @@ body.photography
         .title-bar
             height: 50px
             position: relative
-            background: #E0E0E0
+            background: #fff
             color: rgba(0,0,0,0.4)
             font-size: 20px
             padding: 0 18px
@@ -170,14 +170,16 @@ body.photography
         .project-wrapper,.design-wrapper,.photography-wrapper
             @include centered-x
             display: block
-            width: 210px
+            width: 250px
             height: 250px
             overflow: hidden
+            box-sizing: border-box
+            border: 10px solid white
+            border-bottom: 0
             //-------------------------------design-mini-card-styles---------------
             img
                 @include centered
-                // width: 220px
-                height: 210px
+                height: 250px
                 border-radius: 2px
             //-------------------------------photo-mini-card-styles----------------
             // img.fb-photos
