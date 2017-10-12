@@ -25,6 +25,9 @@ $chips-scroll-width-photo: 550px
 
 body.coding
     background: $dev-wrapper
+    .wrapper
+        button
+            background: #F44336
     #chips-wrapper
         .chips-list
             width: $chips-scroll-width-code
@@ -36,6 +39,9 @@ body.coding
                     color: #F44336
 body.design
     background: $design-wrapper
+    .wrapper
+        button
+            background: #FFB300
     #chips-wrapper
         margin-top: 40px
         .chips-list
@@ -51,6 +57,9 @@ body.photography
     background: $photo-wrapper
     .header
         margin-bottom: 6px
+    .wrapper
+        button
+            background: #3F51B5
     #chips-wrapper
         .chips-list
             width: $chips-scroll-width-photo
@@ -61,52 +70,35 @@ body.photography
                 h1
                     color: #3F51B5
 
-.wrapper
-    //     overflow: hidden
-    //     max-width: 1400px
-    //     margin: 0 auto
-    .btn-manager
-        text-align: center
-        height: 80px
-        margin: 20px 0
-        button
-            width: 50px
-            height: 50px
-            background: #fff
-            border-radius: 50%
-            border: none
-            outline: none
-            box-shadow: $box-shadow-4dp
-            margin: 15px 5%
-            transition: box-shadow 0.1s ease,color 0.1s ease-in-out
-            svg
-                line-height: 50px
-                padding: 13px
-                fill: rgba(0,0,0,0.4)
-            &:active
-                box-shadow: $box-shadow-2dp
-            &:hover svg
-                fill: rgba(#000,0.5)
-        .pagecount
-            width: 60px
-            height: 60px
-            display: inline-block
-            line-height: 60px
-            text-align: center
-            font-size: 24px
-            color: rgba(#000,0.4)
-            transform: translateY(-30%)
-            background: #fff
-            font-weight: 500
-            border-radius: 50%
-            box-shadow: $box-shadow-4dp
-            margin: 15px 5%
-        .disabled-btn
-            box-shadow: $box-shadow-2dp
-            svg
-                fill: rgba(#000,0.2)
-            &:hover svg
-                fill: rgba(#000,0.2)
+button.pre,button.next
+    position: fixed
+    width: 50px
+    height: 50px
+    bottom: 0
+    background: #3f51b5
+    border: none
+    outline: none
+    box-shadow: $box-shadow-4dp
+    margin: 15px
+    border-radius: 50% 50% 50% 0%
+    svg
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        fill: #fff
+        margin-left: -1px
+
+button.pre
+    left: 0
+button.next
+    right: 0
+    border-radius: 50% 50% 0% 50%
+    svg
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        margin-left: 1px
 
 .header
     position: relative
@@ -162,7 +154,7 @@ body.photography
     width: 100%
     margin: 30px auto
     text-align: center
-    margin-bottom: -10px
+    margin-bottom: 65px
     .card
         position: relative
         width: 250px
