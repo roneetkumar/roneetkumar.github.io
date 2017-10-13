@@ -25,57 +25,59 @@ $chips-scroll-width-photo: 550px
 
 body.coding
     background: $dev-wrapper
-    .wrapper
-        button
-            background: #F44336
     #chips-wrapper
+        background: $dev-wrapper
         .chips-list
             width: $chips-scroll-width-code
             .chips
-                background: #F44336
+                background: $dev-accent
             .chip-clicked
                 background: #fff
                 h1
-                    color: #F44336
+                    color: $dev-accent
+    .wrapper
+        margin-top: -40px
+        button
+            background: $dev-accent
 body.design
     background: $design-wrapper
-    .wrapper
-        button
-            background: #FFB300
     #chips-wrapper
-        margin-top: 40px
+        background: $design-wrapper
         .chips-list
             width: $chips-scroll-width-design
             .chips
-                background: #FFB300
+                background: $design-accent
             .chip-clicked
                 background: #fff
                 h1
-                    color: #FFB300
+                    color: $design-accent
+    .wrapper
+        margin-top: -40px
+        button
+            background: $design-accent
 
 body.photography
     background: $photo-wrapper
-    .header
-        margin-bottom: 6px
-    .wrapper
-        button
-            background: #3F51B5
     #chips-wrapper
+        background: $photo-wrapper
         .chips-list
             width: $chips-scroll-width-photo
             .chips
-                background: #3F51B5
+                background: $photo-accent
             .chip-clicked
                 background: #fff
                 h1
-                    color: #3F51B5
+                    color: $photo-accent
+    .wrapper
+        margin-top: -40px
+        button
+            background: $photo-accent
 
 button.pre,button.next
     position: fixed
     width: 50px
     height: 50px
     bottom: 0
-    background: #3f51b5
     border: none
     outline: none
     box-shadow: $box-shadow-4dp
@@ -106,10 +108,11 @@ button.next
     height: 300px
     img
         @include centered-x
+        position: absolute
         width: 400px
         z-index: -1
     svg.back
-        position: absolute
+        position: relative
         top: 12px
         left: 12px
         fill: rgba(0, 0, 0, 0.42)
@@ -120,14 +123,15 @@ button.next
         &:hover
             background: rgba(255, 255, 255, 0.32)
 
-    .p-top
-        top: -70px
-
 //chips-wrapper-------------------------------------------------------------
 #chips-wrapper
     text-align: center
-    margin-bottom: -30px
+    margin: 10px 0
     overflow-x: scroll
+    position: sticky
+    top: 0
+    z-index: 1
+    // transition: all 0.2s ease-in-out
     &::-webkit-scrollbar
         display: none
     .chips-list

@@ -35,7 +35,7 @@ $circle-value: 300px
 body
     background: #424242
 
-.wrapper
+.wrapper,.header
     overflow: hidden
     max-width: 1400px
     margin: 0 auto
@@ -233,12 +233,12 @@ header
     img
         @include centered-x
         width: 430px
+        position: absolute
+        top: -12px
     .dev-wrapper
         background: $dev-wrapper
     .design-wrapper
         background: $design-wrapper
-        img
-            top: 120px
         h1
             top: 80px
     .photo-wrapper
