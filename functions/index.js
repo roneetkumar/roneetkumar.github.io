@@ -117,11 +117,15 @@ $(function() {
         if ($(window).scrollTop() > 310) {
             $('#chips-wrapper').css({
                 'box-shadow':'0 4px 8px rgba(0, 0, 0, 0.3)',
+                'border-bottom' : '1px solid rgba(0, 0, 0, 0.2)',
+                'background': '#424242'
             });
 
         } else {
             $('#chips-wrapper').css({
                 'box-shadow':'none',
+                'border-bottom' : 'none',
+                'background': 'initial'
             });
         }
     });
