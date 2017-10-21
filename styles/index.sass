@@ -478,37 +478,37 @@ section#youtube
         list-style: none
         width: 100%
         text-align: center
-        a
-            text-decoration: none
-            li
-                display: inline-block
-                cursor: default
-                margin: 10px
-                border-radius: 2px
-                box-shadow: $box-shadow-4dp
+        li
+            display: inline-block
+            cursor: default
+            margin: 10px
+            border-radius: 2px
+            box-shadow: $box-shadow-4dp
+            @media only screen and(max-width: 700px)
+                border-radius: 50%
+                height: 80px
+            a
+                text-decoration: none
+            h1
+                @include div-wala-font
+                padding: 20px
+                transition: color 100ms ease-in-out
                 @media only screen and(max-width: 700px)
-                    border-radius: 50%
-                    height: 80px
-                h1
-                    @include div-wala-font
-                    padding: 20px
-                    transition: color 100ms ease-in-out
-                    @media only screen and(max-width: 700px)
-                        display: none
-                    @media only screen and(max-width: 425px)
-                        font-size: 32px
-                &:hover h1
-                    color: rgba(0,0,0,0.4)
-                svg
-                    fill: rgba(#000,0.32)
-                    width: 60px
                     display: none
-                    transition: fill 100ms ease-in-out
-                    padding: 10px
-                    @media only screen and(max-width: 700px)
-                        display: inline-block
-                &:hover svg
-                    fill: rgba(0,0,0,0.4)
+                @media only screen and(max-width: 425px)
+                    font-size: 32px
+            &:hover h1
+                color: rgba(0,0,0,0.4)
+            svg
+                fill: rgba(#000,0.32)
+                width: 60px
+                display: none
+                transition: fill 100ms ease-in-out
+                padding: 10px
+                @media only screen and(max-width: 700px)
+                    display: inline-block
+            &:hover svg
+                fill: rgba(0,0,0,0.4)
 
     ul.list li.github, ul.list li.codepen
 
@@ -523,6 +523,8 @@ section#youtube
         background: $github
     .codepen
         background: $codepen
+    .linked-in
+        background: $linked-in
 //------------------------------------------------------footer----------------------------------
 footer
     position: relative
