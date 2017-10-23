@@ -30,13 +30,12 @@ const PRECACHE_URLS = [
     'functions/jquery.min.js',
     'functions/index.js',
     'functions/manifest.json',
-    'assets/1.png',
-    'assets/code.png',
-    'assets/design.png',
+    'assets/code.webp',
+    'assets/design.webp',
+    'assets/photo.webp',
     'assets/favicon.ico',
     'assets/me1.svg',
-    'assets/open.svg',
-    'assets/photo.png',
+    'assets/open.svg'
 
 
 ];
