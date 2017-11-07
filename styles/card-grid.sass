@@ -1,11 +1,6 @@
 // -------------imports--------------------
 @import 'shadows','center-mixins','colors'
 
-
-$chips-scroll-width-code: 508px
-$chips-scroll-width-design: 521px
-$chips-scroll-width-photo: 550px
-
 //------------------font-mixins---------------
 @mixin div-wala-font
     font-size: 36px
@@ -28,7 +23,6 @@ body.coding
     #chips-wrapper
         background: $dev-wrapper
         .chips-list
-            width: $chips-scroll-width-code
             .chips
                 background: $dev-accent
             .chip-clicked
@@ -44,7 +38,6 @@ body.design
     #chips-wrapper
         background: $design-wrapper
         .chips-list
-            width: $chips-scroll-width-design
             .chips
                 background: $design-accent
             .chip-clicked
@@ -61,7 +54,6 @@ body.photography
     #chips-wrapper
         background: $photo-wrapper
         .chips-list
-            width: $chips-scroll-width-photo
             .chips
                 background: $photo-accent
             .chip-clicked
@@ -140,10 +132,14 @@ button.next
         display: none
     .chips-list
         margin: 0 auto
-        // padding: 0 12px
+        padding: 0 10px
+        list-style: none
+        height: 62px
         .chips
             margin: 15px 6px
-            display: inline-block
+            // display: inline-block
+            float: left
+            height: 32px
             border-radius: 50px
             box-shadow: $box-shadow-2dp
             transition: box-shadow 225ms ease-in-out
@@ -152,7 +148,8 @@ button.next
                 text-align: center
                 font-size: 14px
                 color: #fff
-                padding: 7.5px 12px
+                padding: 0 12px
+                line-height: 33px
                 text-transform: uppercase
                 font-weight: bold
                 font-family: sans-serif
