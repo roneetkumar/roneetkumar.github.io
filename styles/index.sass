@@ -26,8 +26,8 @@ $circle-value: 300px
 *
     margin: 0
     padding: 0
-    font-family: 'Fira Sans'
-    font-weight: normal
+    // font-family: 'Fira Sans'
+    // font-weight: normal
     cursor: default
     &::selection
         background: rgba(0, 0, 0, 0.20)
@@ -77,6 +77,8 @@ h1.gutter-text
     padding: 15px 10px
     text-align: center
     letter-spacing: 1px
+    font-family: 'fira sans'
+    font-weight: normal
     .load
         position: absolute
         right: -15px
@@ -142,6 +144,8 @@ header
         font-size: 24px
         letter-spacing: 2px
         color: rgba(0,0,0,.4)
+        font-family: 'Fira Sans'
+        font-weight: normal
     hr
         width: 70px
         height: 2px
@@ -161,6 +165,8 @@ header
     p.about-me
         @include centered-x
         font-size: 24px
+        font-family: 'fira sans'
+        font-weight: normal
         text-align: justify
         width: 90%
         max-width: 700px
@@ -186,6 +192,7 @@ header
     h1
         @include centered-x
         @include div-wala-font
+        font-family: 'fira sans'
         position: absolute
         text-align: center
         width: 100%
@@ -221,6 +228,7 @@ header
         h1
             @include centered-x
             @include div-wala-font
+            font-family: 'fira sans'
             position: absolute
             bottom: 70px
             transition: all 500ms ease-in-out
@@ -248,6 +256,8 @@ header
             width: 100%
     button
         @include centered-x
+        font-family: 'fira sans'
+        font-weight: normal
         position: absolute
         bottom: 22px
         height: 36px
@@ -279,6 +289,7 @@ section#youtube
     h1.youtube-heading
         @include centered-x
         @include div-wala-font
+        font-family: 'fira sans'
         position: absolute
         top: 35px
         transition: all 500ms ease-in-out
@@ -305,6 +316,8 @@ section#youtube
                 height: 100%
     button
         @include centered-x
+        font-family: 'fira sans'
+        font-weight: normal
         position: absolute
         bottom: 35px
         height: 36px
@@ -369,6 +382,7 @@ section#youtube
         .edu
             padding: 40px 18px
             .title
+                font-family: 'fira sans'
                 font-size: 18px
                 color: rgba(0,0,0,0.55)
                 margin: 18px 0
@@ -378,15 +392,20 @@ section#youtube
                 .element
                     margin: 6px 0
                     .name
+                        font-weight: normal
                         color: #212121
                         font-size: 16px
                         font-family: monospace
                         margin: 4px 0
                     .course
+                        font-family: 'fira sans'
+                        font-weight: normal
                         color: #424242
                         font-size: 14px
                         margin: 4px 0
                     .info
+                        font-family: 'fira sans'
+                        font-weight: normal
                         color: #616161
                         font-size: 13px
                         margin: 4px 0
@@ -491,6 +510,7 @@ section#youtube
                 text-decoration: none
             h1
                 @include div-wala-font
+                font-family: 'fira sans'
                 padding: 20px
                 transition: color 100ms ease-in-out
                 @media only screen and(max-width: 700px)
@@ -510,7 +530,7 @@ section#youtube
             &:hover svg
                 fill: rgba(0,0,0,0.4)
 
-    ul.list li.github, ul.list li.codepen
+    // ul.list li.github, ul.list li.codepen
 
 
     .fb
@@ -533,6 +553,7 @@ footer
     background: $footer
     text-align: center
     h1
+        font-family: 'fira sans'
         color: rgba(#000,0.4)
         font-size: 16px
         letter-spacing: 4px
@@ -599,6 +620,8 @@ footer
         line-height: 1.25em
         overflow: hidden
         .text-input
+            font-family: 'fira sans'
+            font-weight: normal
             width: 100%
             margin-top: 8px
             margin-bottom: 8px
@@ -617,6 +640,8 @@ footer
             &:not(:focus)
                 border-bottom-color: rgba(0,0,0,.12)
         textarea
+            font-family: 'fira sans'
+            font-weight: normal
             resize: none
             word-wrap: break-word
         .button-wrapper
@@ -680,6 +705,8 @@ footer
 
 h1.fab-title
     @include centered
+    font-family: 'fira sans'
+    font-weight: normal
     position: absolute
     color: white
     font-size: 24px
