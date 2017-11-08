@@ -1,12 +1,17 @@
 // -------------imports--------------------
 @import 'shadows','center-mixins','colors'
 
+$code-chip-list-width: 471px
+$design-chip-list-width: 484px
+$photo-chip-list-width: 513px
+
 
 body.coding
     background: $dev-wrapper
     #chips-wrapper
         background: $dev-wrapper
         .chips-list
+            width: $code-chip-list-width
             .chips
                 background: $dev-accent
             .chip-clicked
@@ -22,6 +27,7 @@ body.design
     #chips-wrapper
         background: $design-wrapper
         .chips-list
+            width: $design-chip-list-width
             .chips
                 background: $design-accent
             .chip-clicked
@@ -38,6 +44,7 @@ body.photography
     #chips-wrapper
         background: $photo-wrapper
         .chips-list
+            width: $photo-chip-list-width
             .chips
                 background: $photo-accent
             .chip-clicked
@@ -116,7 +123,7 @@ button.next
         display: none
     .chips-list
         margin: 0 auto
-        padding: 0 10px
+        padding: 0 6px
         list-style: none
         height: 62px
         .chips

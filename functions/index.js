@@ -1,16 +1,16 @@
 $(function() {
 
-    //chip-width-----------------------------------------------
-    function width() {
-        var width = 0;
-        $('.chips').each(function() {
-            width += $(this).outerWidth(true);
-        });
-        console.log(width);
-        $('ul.chips-list').css('width', width + 1);
-    }
-    width();
-    
+    // //chip-width-----------------------------------------------
+    // function width() {
+    //     var width = 0;
+    //     $('.chips').each(function() {
+    //         width += $(this).outerWidth(true);
+    //     });
+    //     console.log(width);
+    //     $('ul.chips-list').css('width', width + 1);
+    // }
+    // width();
+
     //fab open function
     function fabOpen() {
         $('.btn-mail').fadeOut(350)
