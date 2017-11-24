@@ -2,29 +2,13 @@
   "name": "Roneet",
   "short_name": "Roneet",
   "icons": [{
-    "src": "../assets/favicon.ico",
-      "sizes": "128x128",
-      "type": "image/png"
-    }, {
-      "src": "../assets/favicon.ico",
-      "sizes": "144x144",
-      "type": "image/png"
-    }, {
-      "src": "../assets/favicon.ico",
-      "sizes": "152x152",
-      "type": "image/png"
-    }, {
-      "src": "../assets/favicon.ico",
-      "sizes": "192x192",
-      "type": "image/png"
-    }, {
-      "src": "../assets/favicon.ico",
-      "sizes": "256x256",
+      "src": "../assets/512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }],
   "start_url": "../index.html?homescreen=1",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#212121",
-  "theme_color": "#212121"
+  "background_color": "#000",
+  "theme_color": "#000"
 }

@@ -34,6 +34,7 @@ const PRECACHE_URLS = [
     'assets/design.webp',
     'assets/photo.webp',
     'assets/favicon.ico',
+    'assets/512x512.png',
     'assets/me1.svg',
     'assets/open.svg'
 ];
