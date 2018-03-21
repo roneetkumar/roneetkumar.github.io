@@ -48,14 +48,14 @@ $(function() {
         fabClose();
     });
 
-    $(".fab-header-wrapper").children().on('click',function(event){
+    $(".fab-header-wrapper").children().on('click', function(event) {
         event.stopPropagation();
     });
 
     // qualification btn animation
     var FourButtons = $('.b-one, .b-two, .b-three, .b-four');
 
-    FourButtons.on('click',function () {
+    FourButtons.on('click', function() {
         $(this).addClass('b-open');
         FourButtons.not(this).removeClass('b-open');
 
@@ -66,7 +66,7 @@ $(function() {
         FourButtons.not(this).children('.edu').addClass('hide');
     });
 
-    $('.s-b-one,.s-b-two,.s-b-three,.s-b-four').on('click',function () {
+    $('.s-b-one,.s-b-two,.s-b-three,.s-b-four').on('click', function() {
         FourButtons.not(this).removeClass('b-open');
         FourButtons.not(this).children().removeClass('shift');
         FourButtons.not(this).children('.edu').addClass('hide');
@@ -74,40 +74,40 @@ $(function() {
 
 
     //chips-selection-----------------------------------------
-    $('.chips').on('click',function () {
+    $('.chips').on('click', function() {
         $(this).addClass('chip-clicked');
         $('.chips').not(this).removeClass('chip-clicked');
     });
 
     //chip-filter---------------------------------------
     var card = $('.card');
-    $('.all-chips').on('click',function () {
+    $('.all-chips').on('click', function() {
         card.not('.card').addClass('card-hidden');
         $('.all-chips').addClass('chip-clicked');
         $('.chips').not('.all-chips').removeClass('chip-clicked');
     });
 
-    $('.all-chips, .icons-chips, .illus-chips, .uiux-chips, .elements-chips, .websites-chips, .apps-chips, .web-apps-chips, .land-chips, .macro-chips, .port-chips, .wild-chips').on('click',function () {
+    $('.all-chips, .icons-chips, .illus-chips, .uiux-chips, .elements-chips, .websites-chips, .apps-chips, .web-apps-chips, .land-chips, .macro-chips, .port-chips, .wild-chips').on('click', function() {
         card.removeClass('card-hidden');
     });
 
-    $('.icons-chips, .websites-chips, .land-chips').on('click',function () {
+    $('.icons-chips, .websites-chips, .land-chips').on('click', function() {
         card.not('.select-icons, .select-websites, .select-land ').addClass('card-hidden');
     });
-    $('.illus-chips, .apps-chips, .macro-chips').on('click',function () {
+    $('.illus-chips, .apps-chips, .macro-chips').on('click', function() {
         card.not('.select-illus, .select-apps , .select-macro').addClass('card-hidden');
     });
-    $('.uiux-chips, .web-apps-chips , .port-chips').on('click',function () {
+    $('.uiux-chips, .web-apps-chips , .port-chips').on('click', function() {
         card.not('.select-uiux, .select-web-apps, .select-port').addClass('card-hidden');
     });
-    $('.elements-chips, .wild-chips').on('click',function () {
+    $('.elements-chips, .wild-chips').on('click', function() {
         card.not('.select-elements, .select-wild').addClass('card-hidden');
     });
 
     //opening files
-    $('.open-logo').on('click',function () {
+    $('.open-logo').on('click', function() {
         var path = $(this).closest('.card').find('.img').attr('src');
-        $('.open-logo').parent().attr('href',path);
+        $('.open-logo').parent().attr('href', path);
     });
 
 
@@ -128,12 +128,12 @@ $(function() {
     $(window).scroll(function() {
         if ($(window).scrollTop() > 310) {
             $('#chips-wrapper').css({
-                'box-shadow':'0 4px 8px rgba(0, 0, 0, 0.3)'
+                'box-shadow': '0 4px 8px rgba(0, 0, 0, 0.3)'
             });
 
         } else {
             $('#chips-wrapper').css({
-                'box-shadow':'none'
+                'box-shadow': 'none'
             });
         }
     });
