@@ -1,15 +1,24 @@
 $(function() {
 
-    // //chip-width-----------------------------------------------
-    // function width() {
-    //     var width = 0;
-    //     $('.chips').each(function() {
-    //         width += $(this).outerWidth(true);
-    //     });
-    //     console.log(width);
-    //     $('ul.chips-list').css('width', width + 1);
-    // }
-    // width();
+    $(window).on("load", function() {
+        //chip-width-----------------------------------------------
+        var width = 0;
+        $('.chips').each(function() {
+            width += $(this).outerWidth(true);
+        });
+        $('ul.chips-list').css('width', width);
+    });
+
+    //animation trigger
+    $('#logo-wrapper svg').on('click', function() {
+        var backgroundWrapper = $('.background-wrapper div');
+        backgroundWrapper.addClass('play-ani');
+        //animation class removed after animation
+        backgroundWrapper.on("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
+            $(this).removeClass('play-ani');
+        });
+    });
+
 
     //fab open function
     function fabOpen() {
@@ -87,21 +96,17 @@ $(function() {
         $('.chips').not('.all-chips').removeClass('chip-clicked');
     });
 
-    $('.all-chips, .icons-chips, .illus-chips, .uiux-chips, .elements-chips, .websites-chips, .apps-chips, .web-apps-chips, .land-chips, .macro-chips, .port-chips, .wild-chips').on('click', function() {
+    $('.all-chips, ul.chips-list li').on('click', function() {
         card.removeClass('card-hidden');
     });
 
-    $('.icons-chips, .websites-chips, .land-chips').on('click', function() {
-        card.not('.select-icons, .select-websites, .select-land ').addClass('card-hidden');
-    });
-    $('.illus-chips, .apps-chips, .macro-chips').on('click', function() {
-        card.not('.select-illus, .select-apps , .select-macro').addClass('card-hidden');
-    });
-    $('.uiux-chips, .web-apps-chips , .port-chips').on('click', function() {
-        card.not('.select-uiux, .select-web-apps, .select-port').addClass('card-hidden');
-    });
-    $('.elements-chips, .wild-chips').on('click', function() {
-        card.not('.select-elements, .select-wild').addClass('card-hidden');
+    var chipsClasses = ['.icons-chips', '.websites-chips',' .land-chips','.illus-chips', '.apps-chips',' .macro-chips','.uiux-chips', '.web-apps-chips' ,'.port-chips','.elements-chips', '.wild-chips'];
+    var selectClasses = ['.select-icons','.select-websites',' .select-land','.select-illus','.select-apps', '.select-macro','.select-uiux', '.select-web-apps', '.select-port','.select-elements', '.select-wild'];
+
+    $.each(chipsClasses, function(i, item) {
+        $(chipsClasses[i]).on('click', function() {
+            card.not(selectClasses[i]).addClass('card-hidden');
+        });
     });
 
     //opening files
