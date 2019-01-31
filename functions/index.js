@@ -100,8 +100,8 @@ $(function() {
         card.removeClass('card-hidden');
     });
 
-    var chipsClasses = ['.icons-chips', '.websites-chips',' .land-chips','.illus-chips', '.apps-chips',' .macro-chips','.uiux-chips', '.web-apps-chips' ,'.port-chips','.elements-chips', '.wild-chips'];
-    var selectClasses = ['.select-icons','.select-websites',' .select-land','.select-illus','.select-apps', '.select-macro','.select-uiux', '.select-web-apps', '.select-port','.select-elements', '.select-wild'];
+    var chipsClasses = ['.icons-chips', '.websites-chips', ' .land-chips', '.illus-chips', '.apps-chips', ' .macro-chips', '.uiux-chips', '.web-apps-chips', '.port-chips', '.elements-chips', '.wild-chips'];
+    var selectClasses = ['.select-icons', '.select-websites', ' .select-land', '.select-illus', '.select-apps', '.select-macro', '.select-uiux', '.select-web-apps', '.select-port', '.select-elements', '.select-wild'];
 
     $.each(chipsClasses, function(i, item) {
         $(chipsClasses[i]).on('click', function() {
