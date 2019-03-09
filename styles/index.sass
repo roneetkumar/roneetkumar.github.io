@@ -52,7 +52,7 @@ body
     .overlay
         display: none
 
-//-------------------------background-wallpaper-animation-styles-----------------------
+//------------------background-wallpaper-animation-styles------------------
 .background-wrapper
     @include centered-x
     position: absolute
@@ -77,9 +77,9 @@ body
 
     .play-ani
         animation: chapak 3s cubic-bezier(0.5,1.5,0.5,1.5)
-//-------------------------background-wallpaper-animation-styles-----------------------
+//----------------background-wallpaper-animation-styles------------------
 
-//----------------------------------gutter-text-styles-----------------------------
+//----------------------gutter-text-styles------------------------
 h1.gutter-text
     @include centered-x
     font-size: 22px
@@ -100,9 +100,9 @@ h1.gutter-text
         // border: 3px solid #757575
         border-radius: 50%
         animation: gol-gol 1s ease-in-out infinite
-//----------------------------------gutter-text-styles-----------------------------
+//-------------------------gutter-text-styles-------------------------
 
-//----------------------------------ripple-styles----------------------------------
+//---------------------------ripple-styles-----------------------------
 .ripple
     @include centered
     position: absolute
@@ -114,7 +114,7 @@ h1.gutter-text
     width: 100%
     height: 100%
     background-color: rgba(#000,0.1)
-//----------------------------------ripple-styles----------------------------------
+//---------------------------ripple-styles---------------------------
 header,section#bio,section#logo-wrapper,section#passions,section#youtube,section#qualifications,section#social,footer
     overflow: hidden
     border-radius: 2px
@@ -122,7 +122,7 @@ header,section#bio,section#logo-wrapper,section#passions,section#youtube,section
     @media only screen and(max-width: 1400px)
         border-radius: 0
 
-//-----------------------------------header----------------------------------------
+//------------------------------header-------------------------------
 header
     position: relative
     width: 100%
@@ -165,7 +165,7 @@ header
         font-size: 16px
         margin: initial
 
-// ------------------------------------my-bio----------------------------------------
+// -----------------------------my-bio--------------------------------
 #bio
     width: 100%
     min-height: 250px
@@ -186,7 +186,7 @@ header
         @media only screen and(max-width: 320px)
             font-size: 20px
 
-// ----------------------------------------logo--------------------------------------
+// -----------------------------logo--------------------------
 #logo-wrapper
     width: 100%
     height: 500px
@@ -197,6 +197,9 @@ header
     svg
         @include centered
         width: 130px
+        transition: all 0.155s ease-in-out
+        &:hover
+            transform: translate(-50%, -50%) scale(1.1)
 
     h1
         @include centered-x
@@ -216,7 +219,7 @@ header
             margin: 0
         @media only screen and(max-width: 425px)
             font-size: 32px
-// ----------------------------------------my-passions-----------------------------------------
+// ------------------------my-passions-----------------------------
 #passions
     width: 100%
     height: 500px
@@ -289,7 +292,7 @@ header
     button[name=design]
         bottom: 442px
 
-//---------------------------------------youtube---------------------------------------------
+//-----------------------------youtube----------------------------------
 section#youtube
     position: relative
     width: 100%
@@ -346,7 +349,7 @@ section#youtube
         &:hover
             color: rgba(#000,0.5)
 
-//---------------------------------------qualifications--------------------------------------
+//--------------------------qualifications--------------------------
 #qualifications
     position: relative
     width: 100%
@@ -376,7 +379,6 @@ section#youtube
         background: #fff
         box-shadow: $box-shadow-4dp
         border-radius: 50%
-        margin: 0 10px
         transition: all 0.3s ease-in-out
         overflow: hidden
         &:hover svg
@@ -448,44 +450,27 @@ section#youtube
                         border-radius: 50%
                         background: #fff
                         box-shadow: 0 2px 4px rgba(0,0,0,0.4)
-                //--------------------------------progress-value-------------------------------
-                .web-d-value
-                    width: 75%
-                .a-d-value
-                    width: 65%
-                .illu-value
-                    width: 65%
-                .icono-value
-                    width: 80%
-                .ux-ui-value
-                    width: 70%
-                .photo-cap-value
-                    width: 75%
-                .p-edit-value
-                    width: 85%
-                .photo-mani-value
-                    width: 80%
-                //--------------------------------progress-value-------------------------------
+
         .hide
             display: none
         .shift
             top: 10%
     .b-one,.s-b-one
-        left: 10%
+        left: 15%
     .b-two
         background: $dev-wrapper
-        left: 35%
+        left: 37%
         svg
             transform: translate(-50%,-50%) scale(1.2)
 
     .s-b-two
-        left: 35%
+        left: 37%
     .b-three,.s-b-three
         background: $design-wrapper
-        left: 59%
+        left: 63%
     .b-four,.s-b-four
         background: $photo-wrapper
-        left: 84%
+        left: 85%
     .s-reset
         background: rgba(0,0,0,0)
         box-shadow: inset 0 0 10px rgba(0,0,0,0.5)
@@ -499,7 +484,8 @@ section#youtube
         transform: translate(-50%,-50%)
         border-radius: 2px
         margin: 0
-//----------------------------------------social-------------------------------------------
+        overflow-y:  visible
+//------------------------------social-----------------------------------
 #social
     box-shadow: none !important
     ul.list
@@ -544,8 +530,8 @@ section#youtube
 
     .fb
         background: $facebook
-    .gplus
-        background: $gplus
+    .instagram
+        background: $instagram
     .twitter
         background: $twitter
     .github
@@ -554,7 +540,9 @@ section#youtube
         background: $codepen
     .linked-in
         background: $linked-in
-//------------------------------------------------------footer----------------------------------
+    .dribbble
+        background: $dribbble
+//--------------------------------------footer-------------------------------
 footer
     position: relative
     width: 100%
@@ -587,6 +575,7 @@ footer
             color: #e2f528
 
     a
+        text-decoration: none
         &:focus
             outline: none
 

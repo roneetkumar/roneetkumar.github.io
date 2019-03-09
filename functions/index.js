@@ -82,6 +82,41 @@ $(function() {
     });
 
 
+    var content = $('.content')
+    var btn = ['.b-two .content', '.b-three .content', '.b-four .content']
+    var code = ['Web Development', 'Andriod Development', 'Python', 'C++'];
+    var design = ['Illustrations', 'Iconography', 'UX / UI', 'Prototyping'];
+    var photo = ['Abstract', 'Potraits', 'Street', 'Post Editing'];
+
+    $(content).each(function(i, item) {
+        $(btn[0]).append("<section class='element pro-ele'><div class='name'>" + code[i] + "</div><div class='progress-wrapper'><div class='progress-value'><div class='progress-dot reverse-dot'></div></div></div></section>");
+        $(btn[1]).append("<section class='element pro-ele'><div class='name'>" + design[i] + "</div><div class='progress-wrapper'><div class='progress-value'><div class='progress-dot reverse-dot'></div></div></div></section>");
+        $(btn[2]).append("<section class='element pro-ele'><div class='name'>" + photo[i] + "</div><div class='progress-wrapper'><div class='progress-value'><div class='progress-dot reverse-dot'></div></div></div></section>");
+    });
+    $.each(content, function(i, item) {});
+    $.each(content, function(i, item) {});
+
+
+    var element = $(".progress-value");
+    var progressValues = [
+        85, //Web Development
+        65, //Android Development
+        70, //Python
+        80, //c++
+        60, //Illustrations
+        80, //Iconography
+        70, //UX|UI
+        80, //Prototyping
+        75, //Abstract
+        70, //Potraits
+        80, //Street
+        85 //Postediting
+    ];
+
+    $(element).each(function(i, item) {
+        $(element[i]).css('width', progressValues[i] + '%');
+    });
+
     //chips-selection-----------------------------------------
     $('.chips').on('click', function() {
         $(this).addClass('chip-clicked');
