@@ -93,8 +93,6 @@ $(function() {
         $(btn[1]).append("<section class='element pro-ele'><div class='name'>" + design[i] + "</div><div class='progress-wrapper'><div class='progress-value'><div class='progress-dot reverse-dot'></div></div></div></section>");
         $(btn[2]).append("<section class='element pro-ele'><div class='name'>" + photo[i] + "</div><div class='progress-wrapper'><div class='progress-value'><div class='progress-dot reverse-dot'></div></div></div></section>");
     });
-    $.each(content, function(i, item) {});
-    $.each(content, function(i, item) {});
 
 
     var element = $(".progress-value");
