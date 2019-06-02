@@ -95,7 +95,6 @@ h1.gutter-text
         margin-top: 14px
         width: 20px
         height: 20px
-        // border: 3px solid #757575
         border-radius: 50%
         animation: gol-gol 1s ease-in-out infinite
 //-------------------------gutter-text-styles-------------------------
@@ -128,7 +127,6 @@ header
     left: 0
     z-index: 1
     transition: box-shadow 0.3s ease-in-out
-    // background: #fff
     background: url('../assets/1.png')
     background-color: $header
     background-position: center
@@ -286,7 +284,6 @@ header
             box-shadow: $box-shadow-2dp
         &:hover
             color: rgba(#000,0.5)
-            // box-shadow: $box-shadow-4dp
     button[name=design]
         bottom: 442px
 
@@ -523,27 +520,21 @@ section#youtube
             &:hover svg
                 fill: rgba(0,0,0,0.4)
 
-    // ul.list li.github, ul.list li.codepen
-
-
-    .fb
-        background: $facebook
-    .instagram
-        background: $instagram
-    .twitter
-        background: $twitter
-    .github
-        background: $github
-    .codepen
-        background: $codepen
-    .linked-in
-        background: $linked-in
-    .dribbble
-        background: $dribbble
-//--------------------------------------footer-------------------------------
+            &:nth-child(1)
+                background: $github
+            &:nth-child(2)
+                background: $dribbble
+            &:nth-child(3)
+                background: $codepen
+            &:nth-child(4)
+                background: $linked-in
+            &:nth-child(5)
+                background: $instagram
+            &:nth-child(6)
+                background: $twitter
+//-----------------------footer-------------------------
 footer
     position: relative
-    // width: 100%
     background: $footer
     text-align: center
     padding: 30px
@@ -560,18 +551,17 @@ footer
         background: linear-gradient(to right, rgba(#000,0),rgba(#000,0.3) ,rgba(#000,0))
         margin: 15px auto
         border: 0
-    h1.footer-link
-        cursor: default
-        // transition: all 150ms ease-in-out
-        margin: initial
-        display: inline-block
-        padding: 5px
-        text-decoration: underline
-        &:hover
-            color: #e2f528
 
     a
         text-decoration: none
+        h1
+            cursor: default
+            margin: initial
+            display: inline-block
+            padding: 5px
+            text-decoration: underline
+            &:hover
+                color: #e2f528
         &:focus
             outline: none
 
