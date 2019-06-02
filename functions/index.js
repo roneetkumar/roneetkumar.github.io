@@ -84,7 +84,7 @@ $(function() {
 
     var content = $('.content')
     var btn = ['.b-two .content', '.b-three .content', '.b-four .content']
-    var code = ['Web Development', 'Andriod Development', 'Python', 'C++'];
+    var code = ['Web Development', 'Andriod Development', 'C++', 'C#'];
     var design = ['Illustrations', 'Iconography', 'UX / UI', 'Prototyping'];
     var photo = ['Abstract', 'Potraits', 'Street', 'Post Editing'];
 
@@ -98,15 +98,15 @@ $(function() {
     var element = $(".progress-value");
     var progressValues = [
         85, //Web Development
-        65, //Android Development
-        70, //Python
+        60, //Android Development
         80, //c++
+        78, //c#
         60, //Illustrations
         80, //Iconography
         70, //UX|UI
         80, //Prototyping
         75, //Abstract
-        70, //Potraits
+        66, //Potraits
         80, //Street
         85 //Postediting
     ];
