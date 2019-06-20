@@ -2,11 +2,11 @@ $(function() {
 
     $(window).on("load", function() {
         //chip-width-----------------------------------------------
-        var width = 0;
+        let width = 0;
         $('.chips').each(function() {
             width += $(this).outerWidth(true);
         });
-        $('ul.chips-list').css('width', width);
+        $('ul.chips-list').css('width', width + .2);
     });
 
     //animation trigger
